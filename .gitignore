@@ -1,0 +1,42 @@
+# Local build artifacts and caches
+**/.venv/
+**/venv/
+**/env/
+**/ENV/
+**/.python-version
+**/.vscode
+**/.idea
+
+# Byte-compiled / optimized / dynamically generated files
+__pycache__/
+*.py[cod]
+*$py.class
+*.o
+*.so
+
+# Packages
+*.egg
+*.egg-info
+dist/
+build/
+wheels/
+*.whl
+
+# Docker-specific files
+# Ignore generated build context from Docker itself
+.dockerignore
+
+# Ignore configuration files that might contain secrets or are environment-specific
+# that shouldn't be committed to version control.
+.env
+.env.*
+secrets.txt
+
+# Log files and temporary runtime files
+*.log
+*.tmp
+tmp/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
