@@ -6,6 +6,7 @@
 **/.python-version
 **/.vscode
 **/.idea
+node_modules/
 
 # Byte-compiled / optimized / dynamically generated files
 __pycache__/

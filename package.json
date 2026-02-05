@@ -1,0 +1,24 @@
+{
+  "name": "di-design-system",
+  "version": "1.0.0",
+  "description": "This repo is a shell for the main design system the FEC will be building with the UCD team. It uses an nginx server on port 80. Run the commands below to get the Docker image up and running locally.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/govuk-one-login/di-design-system.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/govuk-one-login/di-design-system/issues"
+  },
+  "homepage": "https://github.com/govuk-one-login/di-design-system#readme"
+}
