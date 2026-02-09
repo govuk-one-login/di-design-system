@@ -90,7 +90,51 @@
         </div>
       </div>
     </header>
-
+    <div
+      class="govuk-service-navigation"
+      data-module="govuk-service-navigation"
+    >
+      <div class="govuk-width-container">
+        <div class="govuk-service-navigation__container">
+          <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+            <button
+              type="button"
+              class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle"
+              aria-controls="navigation"
+              hidden
+              aria-hidden="true"
+            >
+              Menu
+            </button>
+            <ul class="govuk-service-navigation__list" id="navigation">
+              <li class="govuk-service-navigation__item">
+                <a class="govuk-service-navigation__link" href="#">
+                  Design hub
+                </a>
+              </li>
+              <li
+                class="govuk-service-navigation__item govuk-service-navigation__item--active"
+              >
+                <a
+                  class="govuk-service-navigation__link"
+                  href="#"
+                  aria-current="true"
+                >
+                  <strong class="govuk-service-navigation__active-fallback"
+                    >Components</strong
+                  >
+                </a>
+              </li>
+              <li class="govuk-service-navigation__item">
+                <a class="govuk-service-navigation__link" href="#">
+                  Patterns
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
     <div class="govuk-width-container">
       <main class="govuk-main-wrapper" id="main-content">
         <div class="govuk-grid-row">
