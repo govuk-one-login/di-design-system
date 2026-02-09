@@ -9,3 +9,5 @@ This repo is a shell for the main design system the FEC will be building with th
 `http://localhost:8080`
 
 [current repo name is temporary and subject to change at time of setting up repo]
+
+`npx eleventy --serve`
