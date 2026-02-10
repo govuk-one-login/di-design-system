@@ -1,16 +1,17 @@
 import { govukEleventyPlugin } from "@x-govuk/govuk-eleventy-plugin";
 
 export default function (eleventyConfig) {
-  // Register the plugin
-  eleventyConfig.addPlugin(govukEleventyPlugin);
+  eleventyConfig.addPlugin(govukEleventyPlugin, {
+    serviceName: "Design System",
+  });
 
   return {
-    dataTemplateEngine: "njk",
+    dir: {
+      input: "src",
+      output: "docs",
+      layouts: "_layouts",
+    },
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
-    dir: {
-      // The folder where all your content will live:
-      input: "docs",
-    },
   };
 }
