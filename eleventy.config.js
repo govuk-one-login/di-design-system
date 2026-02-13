@@ -1,4 +1,5 @@
 import { govukEleventyPlugin } from "@x-govuk/govuk-eleventy-plugin";
+// import __dirname from "node:__dirname";
 
 export default function (eleventyConfig) {
   eleventyConfig.addPlugin(govukEleventyPlugin, {
@@ -9,7 +10,7 @@ export default function (eleventyConfig) {
     dir: {
       input: "src",
       output: "docs",
-      layouts: "_layouts",
+      layouts: "./_includes/base.njk",
     },
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
