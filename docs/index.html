@@ -2,7 +2,7 @@
 <html lang="en" class="govuk-template govuk-template--rebranded">
   <head>
     <meta charset="utf-8">
-    <title>Home - GOV.UK</title>
+    <title>Authentication - GOV.UK</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#1d70b8">
 
@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="/assets/application.css">
 
 
-  <meta property="og:title" content="Home">
+  <meta property="og:title" content="Authentication">
 
     <meta property="og:image" content="/assets/rebrand/images/govuk-opengraph-image.png">
   </head>
@@ -22,7 +22,7 @@
       <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
 
 
-  <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <header class="govuk-header app-header govuk-header--full-width-border" role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container app-header__container">
     <div class="govuk-header__logo app-header__logo">
       <a href="/" class="govuk-header__link govuk-header__link--homepage">
@@ -48,26 +48,268 @@
                 <circle class="govuk-logo-dot" cx="226" cy="36" r="7.3"/>
                 <path d="M93.94 41.25c.4 1.81 1.2 3.21 2.21 4.62 1 1.4 2.21 2.41 3.61 3.21s3.21 1.2 5.22 1.2 3.61-.4 4.82-1c1.4-.6 2.41-1.4 3.21-2.41.8-1 1.4-2.01 1.61-3.01s.4-2.01.4-3.01v.14h-10.86v-7.02h20.07v24.08h-8.03v-5.56c-.6.8-1.38 1.61-2.19 2.41-.8.8-1.81 1.2-2.81 1.81-1 .4-2.21.8-3.41 1.2s-2.41.4-3.81.4a18.56 18.56 0 0 1-14.65-6.63c-1.6-2.01-3.01-4.41-3.81-7.02s-1.4-5.62-1.4-8.83.4-6.02 1.4-8.83a20.45 20.45 0 0 1 19.46-13.65c3.21 0 4.01.2 5.82.8 1.81.4 3.61 1.2 5.02 2.01 1.61.8 2.81 2.01 4.01 3.21s2.21 2.61 2.81 4.21l-7.63 4.41c-.4-1-1-1.81-1.61-2.61-.6-.8-1.4-1.4-2.21-2.01-.8-.6-1.81-1-2.81-1.4-1-.4-2.21-.4-3.61-.4-2.01 0-3.81.4-5.22 1.2-1.4.8-2.61 1.81-3.61 3.21s-1.61 2.81-2.21 4.62c-.4 1.81-.6 3.71-.6 5.42s.8 5.22.8 5.22Zm57.8-27.9c3.21 0 6.22.6 8.63 1.81 2.41 1.2 4.82 2.81 6.62 4.82S170.2 24.39 171 27s1.4 5.62 1.4 8.83-.4 6.02-1.4 8.83-2.41 5.02-4.01 7.02-4.01 3.61-6.62 4.82-5.42 1.81-8.63 1.81-6.22-.6-8.63-1.81-4.82-2.81-6.42-4.82-3.21-4.41-4.01-7.02-1.4-5.62-1.4-8.83.4-6.02 1.4-8.83 2.41-5.02 4.01-7.02 4.01-3.61 6.42-4.82 5.42-1.81 8.63-1.81Zm0 36.73c1.81 0 3.61-.4 5.02-1s2.61-1.81 3.61-3.01 1.81-2.81 2.21-4.41c.4-1.81.8-3.61.8-5.62 0-2.21-.2-4.21-.8-6.02s-1.2-3.21-2.21-4.62c-1-1.2-2.21-2.21-3.61-3.01s-3.21-1-5.02-1-3.61.4-5.02 1c-1.4.8-2.61 1.81-3.61 3.01s-1.81 2.81-2.21 4.62c-.4 1.81-.8 3.61-.8 5.62 0 2.41.2 4.21.8 6.02.4 1.81 1.2 3.21 2.21 4.41s2.21 2.21 3.61 3.01c1.4.8 3.21 1 5.02 1Zm36.32 7.96-12.24-44.15h9.83l8.43 32.77h.4l8.23-32.77h9.83L200.3 58.04h-12.24Zm74.14-7.96c2.18 0 3.51-.6 3.51-.6 1.2-.6 2.01-1 2.81-1.81s1.4-1.81 1.81-2.81a13 13 0 0 0 .8-4.01V13.9h8.63v28.15c0 2.41-.4 4.62-1.4 6.62-.8 2.01-2.21 3.61-3.61 5.02s-3.41 2.41-5.62 3.21-4.62 1.2-7.02 1.2-5.02-.4-7.02-1.2c-2.21-.8-4.01-1.81-5.62-3.21s-2.81-3.01-3.61-5.02-1.4-4.21-1.4-6.62V13.9h8.63v26.95c0 1.61.2 3.01.8 4.01.4 1.2 1.2 2.21 2.01 2.81.8.8 1.81 1.4 2.81 1.81 0 0 1.34.6 3.51.6Zm34.22-36.18v18.92l15.65-18.92h10.82l-15.03 17.32 16.03 26.83h-10.21l-11.44-20.21-5.62 6.22v13.99h-8.83V13.9"/>
             </svg>
+        <span class="govuk-header__product-name">
+          Design Hub
+        </span>
       </a>
     </div>
-    
+    <app-search class="app-search govuk-!-display-none-print" index="/search.json" label="Search site"></app-search>
+
   </div>
 </header>
 
   
+
+  <section aria-label="Service information" class="govuk-service-navigation app-service-navigation"
+data-module="govuk-service-navigation"
+>
+      <div class="govuk-width-container">
+
+    <div class="govuk-service-navigation__container">
+      
+
+      
+        <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+          <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden aria-hidden="true">
+            Menu
+          </button>
+
+          <ul class="govuk-service-navigation__list" id="navigation" >
+
+            
+              
+              <li class="govuk-service-navigation__item">
+                  <a class="govuk-service-navigation__link" href="/get-started/">
+                                    
+Get started
+                  </a>
+              </li>
+
+              
+              <li class="govuk-service-navigation__item">
+                  <a class="govuk-service-navigation__link" href="/features/">
+                                    
+Features
+                  </a>
+              </li>
+
+              
+              <li class="govuk-service-navigation__item">
+                  <a class="govuk-service-navigation__link" href="/layouts/">
+                                    
+Layouts
+                  </a>
+              </li>
+
+            </ul>
+        </nav>
+    </div>
+
+    <app-search class="app-search govuk-!-display-none-print" index="/search-index.json" label="Search site"><a class="app-search__link" href="/sitemap">Sitemap</a></app-search>
+</div>
+
+  </section>
+
+
     
 
       <div class="govuk-width-container">
   
         <main class="govuk-main-wrapper" id="main-content">
-  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter-from-desktop">
+      <nav class="x-govuk-sub-navigation" aria-labelledby="sub-navigation-heading">
+  <h2 class="govuk-visually-hidden" id="sub-navigation-heading">Pages in this section</h2>
+  <ul class="x-govuk-sub-navigation__section">
+    <li class="x-govuk-sub-navigation__section-item x-govuk-sub-navigation__section-item--current">
+      <a class="x-govuk-sub-navigation__link" href="/" aria-current="true">Authentication</a>
+    </li>
+  </ul>
+</nav>
+
+    </div>
+    <div class="govuk-grid-column-three-quarters-from-desktop">
+      
 <header class="app-document-header">
-  <h1 class="govuk-heading-xl">Home</h1>
+  <span class="govuk-caption-xl">Get started</span><h1 class="govuk-heading-xl">Authentication</h1>
 </header>
 
 
 
-  <div class="app-prose-scope">
+      <div class="app-prose-scope"><section aria-label="Service information" class="govuk-service-navigation"
+      data-module="govuk-service-navigation">
+      <div class="govuk-width-container">
+        <div class="govuk-service-navigation__container">
+          <span class="govuk-service-navigation__service-name">
+            <a href="#" class="govuk-service-navigation__link">
+              Design hub
+            </a>
+          </span>
+          <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+            <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden aria-hidden="true">
+              Menu
+            </button>
+            <ul class="govuk-service-navigation__list" id="navigation">
+              <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+                <a class="govuk-service-navigation__link" href="#" aria-current="true">
+                  <strong class="govuk-service-navigation__active-fallback">Components</strong>
+                </a>
+              </li>
+              <li class="govuk-service-navigation__item">
+                <a class="govuk-service-navigation__link" href="#">
+                  Patterns
+                </a>
+              </li>
+              
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+    <div class="govuk-width-container">
+      <main class="govuk-main-wrapper" id="main-content">
+        <div class="govuk-grid-row">
+          <section class="app-masthead" role="region" aria-label="Design hub">
+            <div class="govuk-width-container">
+              <h1 class="govuk-heading-xl">Design hub</h1>
+              <p class="govuk-body-l">
+                Design resources to help teams create consistent GOV.UK One
+                Login journeys.
+              </p>
+            </div>
+          </section>
+          <section class="app-whats-new" aria-labelledby="whats-new-title">
+            <div class="govuk-width-container">
+              <h2
+                class="govuk-heading-m app-whats-new__title"
+                id="whats-new-title"
+              >
+                What's new
+              </h2>
+              <ul class="govuk-list govuk-list--bullet app-whats-new__list">
+                <li>
+                  <strong> 1 Decemer 2025</strong> : Added
+                  <a href="" class="govuk-link govuk-link--no-visited-state"
+                    >progress button component guidance</a
+                  >.
+                </li>
+                <li>
+                  <strong> 1 November 2025</strong> : Updated
+                  <a href="" class="govuk-link govuk-link--no-visited-state"
+                    >section start page pattern guidance</a
+                  >.
+                </li>
+                <li>
+                  <strong> 1 October 2025</strong> : Updated
+                  <a href="" class="govuk-link govuk-link--no-visited-state">
+                    GOV.UK One Login prototype</a
+                  >
+                  to include the latest app journey.
+                </li>
+              </ul>
+            </div>
+          </section>
+          <!-- <div class="app-masthead__container">
+            <h1 class="app-masthead__title">Design System</h1>
+          </div> -->
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              <h2 class="govuk-heading-m">Resources</h2>
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                  <div class="design-hub-card govuk-!-margin-top-2">
+                    <div class="design-hub-card__body">
+                      <h3 class="govuk-heading-m">
+                        <a
+                          href=""
+                          class="govuk-link govuk-link--no-visited-state"
+                          >GOV.UK One Login prototype</a
+                        >
+                      </h3>
+                      <p class="govuk-body design-hub-card__description">
+                        An end to end prototype showing how users sign in, prove
+                        their identity and manage their One Login.
+                      </p>
+                      <p
+                        class="govuk-body-s govuk-!-margin-top-4 govuk-!-margin-bottom-0"
+                      >
+                        Password
+                      </p>
+                    </div>
+                    <div class="design-hub-card__footer">
+                      <ul class="design-hub-card__related govuk-list">
+                        <li class="design-hub-card__related-item">
+                          <a
+                            href=""
+                            class="govuk-link govuk-link--no-visited-state"
+                            >Make changes to this prototype</a
+                          >
+                        </li>
+                        <li class="design-hub-card__related-item">
+                          <a
+                            href=""
+                            class="govuk-link govuk-link--no-visited-state"
+                            >Tell us about a change that’s needed</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="govuk-grid-column-one-third">
+                  <div class="design-hub-card govuk-!-margin-top-2">
+                    <div class="design-hub-card__body">
+                      <h3 class="govuk-heading-m">
+                        <a
+                          href=""
+                          class="govuk-link govuk-link--no-visited-state"
+                          >Components</a
+                        >
+                      </h3>
+                      <p class="govuk-body design-hub-card__description">
+                        Reusable parts of a user interface with examples, code
+                        and guidance for GOV.UK One Login.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="govuk-grid-column-one-third">
+                  <div class="design-hub-card govuk-!-margin-top-2">
+                    <div class="design-hub-card__body">
+                      <h3 class="govuk-heading-m">
+                        <a
+                          href=""
+                          class="govuk-link govuk-link--no-visited-state"
+                          >Patterns</a
+                        >
+                      </h3>
+                      <p class="govuk-body design-hub-card__description">
+                        Design solutions for specific user-focused tasks and
+                        page types.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr
+              class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-4 govuk-!-margin-bottom-6"
+            />
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-m">Contribute</h2>
+                <p class="govuk-body">The Design Hub is community led, to keep it updated and relevant we encourage contributions from the community.</p>
+                 <p class="govuk-body">If you have a question, idea or suggestion  <a href="" class="govuk-link govuk-link--no-visited-state">
+                     get in touch through Slack (opens in app if you have it)</a
+                  >.</p>
+              </div>
+          </div>
+          <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">test</h1>
+          </div>
+        </div>
+      </main>
+    </div>
 <h1 class="govuk-heading-xl">Welcome to the docs</h1>
 <p class="govuk-body">This is the main page.</p>
 <a href="/about" class="govuk-link">Go to the about page</a>
@@ -75,8 +317,43 @@
 </div>
 
 
+        <nav class="govuk-pagination" aria-label="Pagination">
+</nav>
 
 
+
+<aside class="app-aside">
+  <h2 class="app-aside__heading">
+    Example layout
+  </h2>
+
+  <div class="app-aside__body">
+    <p class="govuk-body">This is an example page using the <code class="app-code app-code--inline">sub-navigation</code> layout. You can <a href="" class="govuk-link">view the source used to create this page on GitHub</a>.</p>
+
+  </div>
+</aside>
+<div class="x-govuk-related-navigation">
+  <nav class="x-govuk-related-navigation__nav-section" aria-labelledby="related-navigation-other-example-layouts">
+    <h2 class="x-govuk-related-navigation__main-heading" id="related-navigation-other-example-layouts">Other example layouts</h2>
+    <ul class="x-govuk-related-navigation__link-list">
+      <li class="x-govuk-related-navigation__link">
+        <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="/collection">Collection</a>
+      </li>
+      <li class="x-govuk-related-navigation__link">
+        <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="/page">Page</a>
+      </li>
+      <li class="x-govuk-related-navigation__link">
+        <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="/post">Post</a>
+      </li>
+      <li class="x-govuk-related-navigation__link">
+        <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="/">Product page</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+    </div>
+  </div>
         </main>
       </div>
 
