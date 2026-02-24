@@ -17,16 +17,16 @@ export default function (eleventyConfig) {
       // },
       navigation: [
         {
-          text: "Get started",
-          href: "/get-started/",
+          text: "Design hub",
+          href: "/",
         },
         {
-          text: "Features",
-          href: "/features/",
+          text: "Components",
+          href: "/components/",
         },
         {
-          text: "Layouts",
-          href: "/layouts/",
+          text: "Patterns",
+          href: "/patterns/",
         },
       ],
     },
@@ -34,7 +34,7 @@ export default function (eleventyConfig) {
 
   return {
     dir: {
-      input: "src/index.njk",
+      input: "src",
       output: "docs",
       layouts: "_layouts",
       includes: "../node_modules/@x-govuk/govuk-eleventy-plugin/layouts",
