@@ -3,18 +3,18 @@ import { govukEleventyPlugin } from "@x-govuk/govuk-eleventy-plugin";
 
 export default function (eleventyConfig) {
   eleventyConfig.addPlugin(govukEleventyPlugin, {
-    serviceName: "Design System",
+    serviceName: "One Login",
     homeKey: "Home",
     header: {
-      productName: "Design Hub",
-      search: { indexPath: "/search.json" },
+      productName: "One Login",
+      // search: { indexPath: "/search.json" },
     },
     serviceNavigation: {
       serviceUrl: "/",
-      search: {
-        indexPath: "/search-index.json",
-        sitemapPath: "/sitemap",
-      },
+      // search: {
+      //   indexPath: "/search-index.json",
+      //   sitemapPath: "/sitemap",
+      // },
       navigation: [
         {
           text: "Get started",
