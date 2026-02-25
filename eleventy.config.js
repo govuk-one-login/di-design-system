@@ -9,6 +9,7 @@ export default function (eleventyConfig) {
       productName: "One Login",
       // search: { indexPath: "/search.json" },
     },
+    stylesheets: ["/assets/application.css", "/assets/test.css"],
     serviceNavigation: {
       serviceUrl: "/",
       // search: {
