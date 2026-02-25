@@ -123,10 +123,194 @@ Patterns
 
 
   <div class="app-prose-scope">
-<p>[to do]</p>
+<div class="govuk-width-container">
+        
+        <main class="govuk-main-wrapper" id="main-content">
+          
 
-<div class="app-example-preview">
-  </div></div>
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <form action="/index" method="post" id="demo-form">
+
+      <div class="govuk-grid-column-one-quarter">
+        <nav class="app-side-nav" aria-label="Components">
+  <ul class="app-side-nav__list">
+    <li class="app-side-nav__item app-side-nav__item--active">
+      <a class="app-side-nav__link govuk-link--no-visited-state" href="/components/progress-button" aria-current="&quot;page&quot;">
+        Progress button
+      </a>
+    </li>
+
+    <li class="app-side-nav__item ">
+      <a class="app-side-nav__link govuk-link--no-visited-state" href="#">
+       Component name 2
+      </a>
+    </li>
+
+    <li class="app-side-nav__item ">
+      <a class="app-side-nav__link govuk-link--no-visited-state" href="#">
+      Component name 3
+      </a>
+    </li>
+  </ul>
+</nav>
+
+      </div>
+
+      <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-xl">Progress button</h1>
+        <p class="govuk-body">
+          Help users understand that they need to wait for something to finish happening.
+        </p>
+
+        <div class="app-example-wrapper">
+
+          <!-- Toolbar -->
+          <div class="app-example-toolbar">
+            <a href="#" class="govuk-link govuk-link--no-visited-state">
+              Open this example in a new tab
+              <span class="govuk-visually-hidden">: back link</span>
+            </a>
+          </div>
+        
+          <!-- Example preview -->
+          <div class="app-example-preview">
+  
+
+            <!-- JS-enabled progress button -->
+      <button class="govuk-button" id="progress-btn" type="submit">
+        <span class="govuk-button__text">Continue</span>
+        <span class="govuk-visually-hidden" role="status" aria-live="polite"></span>
+      </button>
+  
+    
+            
+          </div>
+        
+          <!-- Tabs -->
+          <div class="govuk-tabs app-tabs" data-module="govuk-tabs" data-govuk-tabs-init="">
+        
+            <ul class="govuk-tabs__list">
+              <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" style="order: 1;">
+                <a class="govuk-tabs__tab" href="#example-html">
+                  HTML
+                </a>
+              </li>
+              <li class="govuk-tabs__list-item" style="order: 3;">
+                <a class="govuk-tabs__tab" href="#example-nunjucks">
+                  Nunjucks
+                </a>
+              </li>
+              <li class="govuk-tabs__list-item" style="order: 5;">
+                <a class="govuk-tabs__tab" href="#example-figma">
+                  Figma
+                </a>
+              </li>
+            </ul>
+        
+            <div class="govuk-tabs__panel" id="example-html" aria-hidden="true" style="order: 2;">
+              <div class="app-example__code">
+                <button class="app-copy-button" type="button" data-copy-init="true">Copy code</button>
+                <pre class="app-code-block"><code>Placeholder for component html</code></pre>
+              </div>
+            </div>
+        
+            <div class="govuk-tabs__panel" id="example-nunjucks" aria-hidden="true" style="order: 4;">
+              <div class="app-example__code">
+                <button class="app-copy-button" type="button" data-copy-init="true">Copy code</button>
+                <pre class="app-code-block"><code>Placeholder for component nunjucks</code></pre>
+              </div>
+            </div>
+        
+            <div class="govuk-tabs__panel" id="example-figma" aria-hidden="true" style="order: 6;">
+              <p class="govuk-body">
+                This component is available in the GOV.UK One Login Figma Design System.
+              </p>
+              <p class="govuk-body">
+                <a class="govuk-link govuk-link--no-visited-state" href="#">View component in Figma</a>
+              </p>
+            </div>
+        
+          </div>
+        
+        </div>
+
+        <h2 class="govuk-heading-l">When to use this component </h2>
+
+        <p class="govuk-body">Use this component when there is more than a 2 second delay between the user clicking a button and seeing the result, such as a page loading.</p>
+
+        <p class="govuk-body"><b>2 seconds is a short delay, so use this component with care.</b> Overusing it, especially on standard transactional steps, can make the service feel slower than it really is. This component is better suited to things like submitting information to an external API or performing a short backend process.</p>
+
+        <h2 class="govuk-heading-l">When not to use this component </h2>
+
+        <p class="govuk-body">Try to make your service respond quickly, so you don’t need to use a progress button.</p>
+
+        <p class="govuk-body">Do not use this component when the user needs to take further action, such as checking their email, opening another app, or retrieving a security code. The progress button is only for situations where the user is expected to wait, not when they need to do something else.</p>
+
+        <p class="govuk-body">Do not use this component when there is less than a 2 second delay between the user clicking a button and seeing the result. Users may notice a brief delay, but they stay focused and do not need reassurance. Using a progress button here can confuse the user or make the service feel slower than it is.</p>
+
+        <p class="govuk-body">Do not use this component when there is more than a 10 second delay between the user clicking a button and seeing the result. After about 10 seconds, the average attention span is maxed out and users don't retain enough short-term memory to easily continue when the result appears. Focus on reducing that time, or use another technique – for example, showing determinate progress on an interstitial page or allowing the user to continue and be notified when the action is complete.</p>
+
+        <h2 class="govuk-heading-l">How it works</h2>
+
+        <p class="govuk-body">A progress button gives users immediate, contextual feedback after they click. It helps reassure them that something is happening and reduces the risk of repeated submissions.</p>
+
+        <p class="govuk-body">The component builds on the default GOV.UK Button to show an active loading state when clicked.</p>
+
+        <p class="govuk-body">After a user clicks the button:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>The button changes to <span class="app-colour-chip">govuk-colour("dark-grey") (#505a5f)</span> to keep the user's focus
+          </li>
+        <li>A spinner appears to indicate that something is happening</li>
+        <li>The button text updates at specific points to reassure something is still happening:</li>
+        </ul>
+
+
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Response time</th>
+              <th scope="col" class="govuk-table__header">Button text</th>
+              <th scope="col" class="govuk-table__header">Welsh translation of button text</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">0.1 seconds</th>
+              <td class="govuk-table__cell">Wait</td>
+              <td class="govuk-table__cell">Aros</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">5 seconds</th>
+              <td class="govuk-table__cell">Keep waiting</td>
+              <td class="govuk-table__cell">Parhau i aros</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="govuk-body">When the loading state appears, the updated text focuses on reassuring the user that the action is still happening, rather than repeating or explaining it. This reassurance is also announced by screen readers as the button text updates. </p>
+        
+
+        <h2 class="govuk-heading-l">Accessibility</h2>
+        <p class="govuk-body">Example section...</p>
+
+        <h2 class="govuk-heading-l">Technical guidance</h2>
+        <p class="govuk-body">Example section...</p>
+
+        <h2 class="govuk-heading-l">Research on this component</h2>
+        <p class="govuk-body">Example section...</p>
+
+
+
+
+      </div></form>
+
+    </div>
+  </div>
+
+
+        </main>
+      </div></div>
 
 
 
