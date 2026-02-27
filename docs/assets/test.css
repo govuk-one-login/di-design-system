@@ -9088,6 +9088,7 @@ p + .govuk-heading-s,
   margin-top: -1px;
   width: 100vw;
   margin-left: -260px;
+  margin-top: -90px !important;
 }
 
 @media (min-width: 40.0625em) {
