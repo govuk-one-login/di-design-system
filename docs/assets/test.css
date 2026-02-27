@@ -9086,6 +9086,8 @@ p + .govuk-heading-s,
   padding-top: 48px;
   padding-bottom: 48px;
   margin-top: -1px;
+  width: 100vw;
+  margin-left: -260px;
 }
 
 @media (min-width: 40.0625em) {
@@ -9115,6 +9117,8 @@ p + .govuk-heading-s,
   background-color: #f4f8fb; /* soft tint of your purple */
   padding-top: 40px;
   padding-bottom: 40px;
+  width: 100vw;
+  margin-left: -260px;
 }
 
 .app-whats-new__title {
