@@ -1,48 +1,31 @@
 ---
 layout: page
 ---
-<div class="govuk-width-container">
-        
-        <main class="govuk-main-wrapper" id="main-content">
-          
-
-  <div class="govuk-width-container">
+<div class="govuk-width-container"> 
+  <main class="govuk-main-wrapper" id="main-content">
     <div class="govuk-grid-row">
 
       <div class="govuk-grid-column-one-quarter">
-        <nav class="app-side-nav" aria-label="Components">
-  <ul class="app-side-nav__list">
-    <li class="app-side-nav__item app-side-nav__item--active">
-      <a class="app-side-nav__link govuk-link--no-visited-state" href="/patterns/section-start-page" aria-current="&quot;page&quot;">
-       Section start page
-      </a>
-    </li>
-
-    <li class="app-side-nav__item ">
-      <a class="app-side-nav__link govuk-link--no-visited-state" href="#">
-      Pattern name 2
-      </a>
-    </li>
-
-    <li class="app-side-nav__item ">
-      <a class="app-side-nav__link govuk-link--no-visited-state" href="#">
-Pattern name 3
-      </a>
-    </li>
-  </ul>
-</nav>
-
+        <nav class="app-side-nav" aria-label="Patterns">
+          <ul class="app-side-nav__list">
+            <li class="app-side-nav__item app-side-nav__item--active">
+              <a class="app-side-nav__link govuk-link--no-visited-state" href="/patterns/section-start-page">Section start page</a>
+            </li>
+            <li class="app-side-nav__item">
+              <a class="app-side-nav__link govuk-link--no-visited-state" href="#">Pattern name 2</a>
+            </li>
+            <li class="app-side-nav__item">
+              <a class="app-side-nav__link govuk-link--no-visited-state" href="#">Pattern name 3</a>
+            </li>
+          </ul>
+        </nav>
       </div>
 
       <div class="govuk-grid-column-three-quarters">
         <h1 class="govuk-heading-xl">Section start page</h1>
-        <p class="govuk-body">
-          Help users to understand which section of the journey they are in, what tasks they’ll need to complete and why.
-        </p>
+        <p class="govuk-body">Help users to understand which section of the journey they are in, what tasks they’ll need to complete and why.</p>
 
         <div class="app-example-wrapper">
-
-          <!-- Toolbar -->
           <div class="app-example-toolbar">
             <a href="#" class="govuk-link govuk-link--no-visited-state">
               Open this example in a new tab
@@ -50,122 +33,120 @@ Pattern name 3
             </a>
           </div>
         
-          <!-- Example preview -->
           <div class="app-example-preview-patterns">
-     
-
-
-            <iframe title="Progress button pattern example" class="app-example__frame app-example__frame--resizable app-example__frame--xl app-example__frame--full" src="/section-start-page-example" loading="eager" spellcheck="false" style="height: 1044px;">
-          </iframe>
-
-
-
-
-
-
-
+            <iframe title="Progress button pattern example" class="app-example__frame app-example__frame--resizable app-example__frame--xl app-example__frame--full" src="/section-start-page-example" loading="eager" style="height: 1044px; border: 0; width: 100%;"></iframe>
           </div>
         
-          <!-- Tabs -->
-          <div class="govuk-tabs app-tabs" data-module="govuk-tabs" data-govuk-tabs-init="">
-        
+          <div class="govuk-tabs app-tabs" data-module="govuk-tabs">
             <ul class="govuk-tabs__list">
-              <li class="govuk-tabs__list-item" style="order: 1;">
-                <a class="govuk-tabs__tab" href="#example-html" aria-selected="false">
-                  HTML
-                </a>
+              <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#example-html">HTML</a>
               </li>
-              <li class="govuk-tabs__list-item" style="order: 3;">
-                <a class="govuk-tabs__tab" href="#example-nunjucks" aria-selected="false">
-                  Nunjucks
-                </a>
+              <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#example-nunjucks">Nunjucks</a>
               </li>
-              <li class="govuk-tabs__list-item" style="order: 5;">
-                <a class="govuk-tabs__tab" href="#example-figma" aria-selected="false">
-                  Figma
-                </a>
+              <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#example-figma">Figma</a>
               </li>
             </ul>
         
-            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="example-html" aria-hidden="true" style="order: 2;">
+            <div class="govuk-tabs__panel" id="example-html">
               <div class="app-example__code">
-                <button class="app-copy-button" type="button" data-copy-init="true">Copy code</button>
-                <pre class="app-code-block"><code>Placeholder for pattern html</code></pre>
+                <button class="app-copy-button" type="button">Copy code</button>
+                <pre class="app-code-block"><code>&lt;!-- HTML code for start page --&gt;</code></pre>
               </div>
             </div>
         
-            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="example-nunjucks" aria-hidden="true" style="order: 4;">
+            <div class="govuk-tabs__panel" id="example-nunjucks">
               <div class="app-example__code">
-                <button class="app-copy-button" type="button" data-copy-init="true">Copy code</button>
-                <pre class="app-code-block"><code>Placeholder for pattern nunjucks</code></pre>
+                <button class="app-copy-button" type="button">Copy code</button>
+                <pre class="app-code-block"><code>{% raw %}{{ govukStartButton({ text: "Start now" }) }}{% endraw %}</code></pre>
               </div>
             </div>
         
-            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="example-figma" aria-hidden="true" style="order: 6;">
-              <p class="govuk-body">
-                This pattern is available in the GOV.UK One Login Figma Design System.
-              </p>
+            <div class="govuk-tabs__panel" id="example-figma">
+              <p class="govuk-body">This pattern is available in the GOV.UK One Login Figma Design System.</p>
               <p class="govuk-body">
                 <a class="govuk-link govuk-link--no-visited-state" href="#">View component in Figma</a>
               </p>
             </div>
-        
           </div>
-        
         </div>
 
+        <h2 class="govuk-heading-l">When to use this pattern</h2>
+        <p class="govuk-body">Show the Section start page when users enter a new section...</p>
 
-
-
-        <h2 class="govuk-heading-l">When to use this pattern </h2>
-
-        <p class="govuk-body">Show the Section start page when users enter a new section in the GOV.UK One Login journey. It should help users understand what tasks they will be asked to complete and why.</p>
-
-
-        <h2 class="govuk-heading-l">When not to use this pattern </h2>
-
-        <p class="govuk-body">A start page might not be necessary if the section only consists of one page, such as the Fraud section. We encourage you to validate this assumption through your own team’s user research.</p>
-
-
-        <h2 class="govuk-heading-l">How it works </h2>
-
-        <p class="govuk-body">The section start page helps users understand:</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>what the credential issuer does</li>
-  <li>what tasks they need to complete next and why</li>
-  <li>if there's anything they need to know before they continue</li>
-</ul>
-
-<p class="govuk-body">Section start pages do not include a ‘Back’ link. Due to technical constraints, users cannot go back from the first page of a section. All subsequent pages in the section should contain a back link, if it is technically possible for them to go back, and security allows.</p>
-
-
-
-
-
-
-        <h2 class="govuk-heading-l">Accessibility</h2>
-        <p class="govuk-body">Example section...</p>
-
-        <h2 class="govuk-heading-l">Technical guidance</h2>
-        <p class="govuk-body">Example section...</p>
-
-        <h2 class="govuk-heading-l">Research on this component</h2>
-        <p class="govuk-body">Example section...</p>
-
-        
-        
-
-
-
-
-
-
-
+        <h2 class="govuk-heading-l">How it works</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>what the credential issuer does</li>
+          <li>what tasks they need to complete next and why</li>
+        </ul>
       </div>
-
     </div>
-  </div>
+  </main>
+</div>
 
+<style>
+  /* Essential CSS to handle panel visibility */
+  .govuk-tabs__panel--hidden {
+    display: none !important;
+  }
+  .app-copy-button {
+    float: right;
+    cursor: pointer;
+    /* Add your specific GOV.UK button styling here if needed */
+  }
+</style>
 
-        </main>
-      </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const tabs = document.querySelectorAll('.govuk-tabs__tab');
+    const panels = document.querySelectorAll('.govuk-tabs__panel');
+    const listItems = document.querySelectorAll('.govuk-tabs__list-item');
+
+    function activateTab(tabLink) {
+      const targetId = tabLink.getAttribute('href').substring(1);
+
+      // Reset all
+      listItems.forEach(item => item.classList.remove('govuk-tabs__list-item--selected'));
+      panels.forEach(panel => {
+        panel.classList.add('govuk-tabs__panel--hidden');
+        panel.setAttribute('aria-hidden', 'true');
+      });
+
+      // Activate selected
+      tabLink.closest('.govuk-tabs__list-item').classList.add('govuk-tabs__list-item--selected');
+      const activePanel = document.getElementById(targetId);
+      if (activePanel) {
+        activePanel.classList.remove('govuk-tabs__panel--hidden');
+        activePanel.setAttribute('aria-hidden', 'false');
+      }
+    }
+
+    // Attach click events
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function (e) {
+        e.preventDefault();
+        activateTab(this);
+      });
+    });
+
+    // Initialize: Activate first tab by default
+    if (tabs.length > 0) {
+      activateTab(tabs[0]);
+    }
+
+    // --- Copy Code Logic ---
+    const copyButtons = document.querySelectorAll('.app-copy-button');
+    copyButtons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const code = this.parentElement.querySelector('code').innerText;
+        navigator.clipboard.writeText(code).then(() => {
+          const originalText = this.innerText;
+          this.innerText = 'Copied!';
+          setTimeout(() => { this.innerText = originalText; }, 2000);
+        });
+      });
+    });
+  });
+</script>
