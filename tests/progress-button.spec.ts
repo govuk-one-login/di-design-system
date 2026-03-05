@@ -162,6 +162,28 @@ test("check main heading and text", async ({ page }) => {
   await expect(page.getByText("Example section...").nth(2)).toBeVisible();
 });
 
-//test to find the tabs for the html, nunjucks and figma
+test("check tabs", async ({ page }) => {
+  await page.goto("/progress-button");
 
-// test to see if you can see the component of progress button
+  await page.getByRole("tab", { name: "HTML" }).focus();
+
+  await page.keyboard.press("ArrowRight");
+
+  await expect(page.getByRole("tab", { name: "Nunjucks" })).toHaveAttribute(
+    "aria-selected",
+    "true",
+  );
+
+  await page.keyboard.press("ArrowRight");
+
+  await expect(page.getByRole("tab", { name: "Figma" })).toHaveAttribute(
+    "aria-selected",
+    "true",
+  );
+});
+
+test("check to see progress button is on page", async ({ page }) => {
+  await page.goto("/progress-button");
+
+  await expect(page.getByRole("button", { name: "Continue" })).toBeVisible();
+});
