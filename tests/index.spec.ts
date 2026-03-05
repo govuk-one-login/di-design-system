@@ -136,20 +136,3 @@ test("contribute section", async ({ page }) => {
     .first()
     .click();
 });
-
-/** reminder: to be moved to separate test pages */
-// Components page tests
-test("has components page title", async ({ page }) => {
-  await page.goto("/components");
-
-  await expect(page).toHaveTitle("Components - GOV.UK");
-});
-
-// Patterns page tests
-test("has patterns page title", async ({ page }) => {
-  await page.goto("/patterns");
-});
-
-// progress button page
-
-// section start page
