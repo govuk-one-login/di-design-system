@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 
 // Patterns page tests
-test("has components page title", async ({ page }) => {
+test("has patterns page title", async ({ page }) => {
   await page.goto("/patterns");
 
   await expect(page).toHaveTitle("Patterns - GOV.UK");
