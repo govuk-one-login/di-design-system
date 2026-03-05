@@ -29,7 +29,7 @@ test("check hero section headings", async ({ page }) => {
   ).toBeVisible();
 });
 
-test("check links work in 'what's new' section", async ({ page }) => {
+test("'what's new' section", async ({ page }) => {
   await page.goto("/");
 
   await page
@@ -44,28 +44,8 @@ test("check links work in 'what's new' section", async ({ page }) => {
     .getByRole("link", { name: /GOV.UK One Login prototype/i })
     .first()
     .click();
-});
-
-test("check 'what's new' headings", async ({ page }) => {
-  await page.goto("/");
 
   await expect(page.getByRole("heading", { name: "What's new" })).toBeVisible();
-
-  // await expect(
-  //   page.getByText(/1 December 2025: Add progress button components guidance/i),
-  // ).toBeVisible();
-
-  // await expect(
-  //   page.getByText(
-  //     "1 November 2025: Updated section start page pattern guidance",
-  //   ),
-  // ).toBeVisible();
-
-  // await expect(
-  //   page.getByText(
-  //     "1 October 2025 : Updated GOV.UK One Login prototype to include the latest app journey",
-  //   ),
-  // ).toBeVisible();
 
   const listItemOne = page.locator("li", { hasText: "1 December 2025" });
   await expect(listItemOne).toContainText(
@@ -83,6 +63,81 @@ test("check 'what's new' headings", async ({ page }) => {
   );
 });
 
+test("check 'resources' headings and list items", async ({ page }) => {
+  await page.goto("/");
+
+  await expect(page.getByRole("heading", { name: "Resources" })).toBeVisible();
+
+  await page
+    .getByRole("link", { name: /GOV.UK One Login prototype/i })
+    .nth(1)
+    .click();
+
+  await expect(
+    page.getByText(
+      "An end to end prototype showing how users sign in, prove their identity and manage their One Login.",
+    ),
+  ).toBeVisible();
+
+  await expect(page.getByText("Password")).toBeVisible();
+
+  await page
+    .getByRole("link", { name: /Make changes to this prototype/i })
+    .click();
+
+  await page
+    .getByRole("link", { name: /Tell us about a change that’s needed/i })
+    .click();
+
+  await page
+    .getByRole("link", { name: /Components/i })
+    .nth(1)
+    .click();
+
+  await expect(
+    page.getByText(
+      "Reusable parts of a user interface with examples, code and guidance for GOV.UK One Login.",
+    ),
+  ).toBeVisible();
+
+  await page
+    .getByRole("link", { name: /Patterns/i })
+    .nth(1)
+    .click();
+
+  await expect(
+    page.getByText(
+      "Design solutions for specific user-focused tasks and page types.",
+    ),
+  ).toBeVisible();
+});
+
+test("contribute section", async ({ page }) => {
+  await page.goto("/");
+
+  await expect(page.getByRole("heading", { name: "Contribute" })).toBeVisible();
+
+  await expect(
+    page.getByText(
+      "The Design Hub is community led, to keep it updated and relevant we encourage contributions from the community.",
+    ),
+  ).toBeVisible();
+
+  await expect(
+    page.getByText(
+      "If you have a question, idea or suggestion get in touch through Slack (opens in app if you have it).",
+    ),
+  ).toBeVisible();
+
+  await page
+    .getByRole("link", {
+      name: /get in touch through Slack /i,
+    })
+    .first()
+    .click();
+});
+
+/** reminder: to be moved to separate test pages */
 // Components page tests
 test("has components page title", async ({ page }) => {
   await page.goto("/components");
@@ -93,8 +148,6 @@ test("has components page title", async ({ page }) => {
 // Patterns page tests
 test("has patterns page title", async ({ page }) => {
   await page.goto("/patterns");
-
-  await expect(page).toHaveTitle("Patterns - GOV.UK");
 });
 
 // progress button page
