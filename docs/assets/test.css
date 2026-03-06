@@ -9082,7 +9082,7 @@ p + .govuk-heading-s,
 /* Masthead (GOV.UK product-style) */
 .app-masthead {
   background: #4c2c92; /* your purple */
-  color: #ffffff;
+  color: #ffffff !important;
   padding-top: 48px;
   padding-bottom: 48px;
   margin-top: -1px;
@@ -9102,12 +9102,12 @@ p + .govuk-heading-s,
 }
 
 .app-masthead__title {
-  color: #ffffff;
+  color: #ffffff !important;
   margin-bottom: 16px;
 }
 
 .app-masthead__description {
-  color: #ffffff;
+  color: #ffffff !important;
   margin-bottom: 0;
 }
 
@@ -9336,4 +9336,12 @@ p + .govuk-heading-s,
 /* Match the Design System “big example” feel */
 .app-example__frame--xl {
   min-height: 1044px; /* use height if you want it fixed */
+}
+
+.app-container {
+  margin-top: -90px !important;
+}
+
+.app-masthead__text {
+  color: #ffffff !important;
 }
