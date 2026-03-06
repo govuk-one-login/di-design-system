@@ -82,12 +82,3 @@ test("check tabs", async ({ page }) => {
     "true",
   );
 });
-
-// test("check section page preview renders on the page", async ({ page }) => {
-//   await page.goto("/section-start-page");
-
-//   console.log(await page.content());
-//   await expect(
-//     page.getByRole("heading", { name: "Page note found" }),
-//   ).toBeVisible();
-// });
