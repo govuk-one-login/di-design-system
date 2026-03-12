@@ -1,0 +1,17 @@
+params:
+  - name: translations
+    type: string
+    required: true
+    description: translations from middleware
+  - name: href
+    type: string
+    required: true
+    description: URL for the button to link to
+  - name: errorPage
+    type: string
+    required: true
+    description: URL for the error help page
+  - name: customDevErrorTimeout
+    type: string
+    required: false
+    description: Custom error timeout for development/testing purposes (in milliseconds) - to be used in dev/test only
