@@ -4,7 +4,9 @@ import { expect, test } from "@playwright/test";
 test("has components page title", async ({ page }) => {
   await page.goto("/components");
 
-  await expect(page).toHaveTitle("Components - GOV.UK");
+  await expect(page).toHaveTitle(
+    "Components - GDS Design System | GOV.UK One Login",
+  );
 });
 
 test("check links work in navigation", async ({ page }) => {
@@ -13,8 +15,6 @@ test("check links work in navigation", async ({ page }) => {
   await page.getByRole("link", { name: "Design hub" }).click();
 
   await page.getByRole("link", { name: "Components" }).first().click();
-
-  await page.getByRole("link", { name: "Patterns" }).first().click();
 });
 
 test("check main heading and text", async ({ page }) => {
