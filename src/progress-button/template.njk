@@ -1,0 +1,145 @@
+{% set progressButton = params.translations %}
+
+<noscript>
+  <style>
+    .noscript {
+      border: #f3f3f3 3px solid;
+      padding-top: 28px;
+      padding-left: 12px;
+      padding-right: 12px;
+      margin-bottom: 12px;
+    }
+  </style>
+</noscript>
+
+{# Set classes for this component #}
+{%- set classNames = "govuk-button govuk-button--progress" -%}
+
+{%- if params.classes %}
+  {% set classNames = classNames + " " + params.classes %}
+{% endif %}
+{% if params.disabled %}
+  {% set classNames = classNames + " govuk-button--disabled" %}
+{% endif -%}
+
+{%- if params.element %}
+  {% set element = params.element | lower %}
+{% else %}
+  {% if params.href %}
+    {% set element = "a" %}
+  {% else %}
+    {% set element = "button" %}
+  {% endif %}
+{% endif -%}
+
+{% if params.isStartButton %}
+  {% set iconHtml %}
+    {#- The SVG needs `focusable="false"` so that Internet Explorer does not
+        treat it as an interactive element - without this it will be
+        'focusable' when using the keyboard to navigate. #}
+    <svg
+      class="govuk-button__start-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      width="17.5"
+      height="19"
+      viewBox="0 0 33 40"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+    </svg>
+  {% endset %}
+  {% set classNames = classNames + " govuk-button--start" %}
+{% endif %}
+
+{#- Define common attributes that we can use across all element types #}
+{%- set commonAttributes %}
+  data-module="govuk-button"
+  {% for attribute, value in params.attributes %}{{ attribute }}="{{ value }}"{% endfor %}
+  {% if params.id %}id="{{ params.id }}"{% endif %}
+{% endset %}
+
+{#- Define common attributes we can use for both button and input types #}
+{%- set buttonAttributes %}
+  {% if params.name %}name="{{ params.name }}"{% endif %}
+  {% if params.disabled %}disabled="disabled" aria-disabled="true"{% endif %}
+  {% if params.preventDoubleClick !== undefined %}data-prevent-double-click="{{ params.preventDoubleClick }}"{% endif %}
+{% endset %}
+
+{%- if element == "a" %}
+  <div class="noscript">
+    <noscript>
+      <div class="govuk-body">{{ progressButton.noJavascriptMessage }}</div>
+    </noscript>
+    <a
+      href="{{ params.href if params.href else '#' }}"
+      role="button"
+      draggable="false"
+      {{- commonAttributes | safe }}
+      class="{{ classNames }}"
+      data-frontendui="di-progress-button"
+      data-waiting-text="{{ progressButton.waitingText }}"
+      data-long-waiting-text="{{ progressButton.longWaitingText }}"
+      data-error-page="{{ params.errorPage | default('#') }}"
+      {%- if params.customDevErrorTimeout %}data-error-timeout="{{ params.customDevErrorTimeout }}"{% endif %}
+    >
+      {% if params.html %}
+        {{ params.html | safe }}
+      {% elseif params.text %}
+        {{ params.text | safe }}
+      {% else %}
+        {{ progressButton.text }}
+      {% endif %}
+      {{- iconHtml | safe | trim | indent(2, true) if iconHtml -}}
+    </a>
+  </div>
+
+{%- elseif element == "button" %}
+  <div class="noscript">
+    <noscript>
+      <div class="govuk-body">{{ progressButton.noJavascriptMessage }}</div>
+    </noscript>
+    <button
+      {%- if params.value %}value="{{ params.value }}"{% endif %}
+      {%- if params.type %}type="{{ params.type }}"{% endif %}
+      {{- buttonAttributes | safe }}
+      {{- commonAttributes | safe }}
+      class="{{ classNames }}"
+      data-frontendui="di-progress-button"
+      data-waiting-text="{{ progressButton.waitingText }}"
+      data-long-waiting-text="{{ progressButton.longWaitingText }}"
+      data-error-page="{{ params.errorPage | default('#') }}"
+      {%- if params.customDevErrorTimeout %}data-error-timeout="{{ params.customDevErrorTimeout }}"{% endif %}
+    >
+      {% if params.html %}
+        {{ params.html | safe }}
+      {% elseif params.text %}
+        {{ params.text | safe }}
+      {% else %}
+        {{ progressButton.text }}
+      {% endif %}
+      {{- iconHtml | safe | trim | indent(2, true) if iconHtml -}}
+    </button>
+  </div>
+
+{%- elseif element == "input" %}
+  <div class="noscript">
+    <noscript>
+      <div class="govuk-body">{{ progressButton.noJavascriptMessage }}</div>
+    </noscript>
+    <input
+      value="{{ params.value }}"
+      type="{{ params.type if params.type else 'submit' }}"
+      {{- buttonAttributes | safe }}
+      {{- commonAttributes | safe }}
+      class="{{ classNames }}"
+      data-frontendui="di-progress-button"
+      data-waiting-text="{{ progressButton.waitingText }}"
+      data-long-waiting-text="{{ progressButton.longWaitingText }}"
+      data-error-page="{{ params.errorPage | default('#') }}"
+      {%- if params.customDevErrorTimeout %}data-error-timeout="{{ params.customDevErrorTimeout }}"{% endif %}
+    />
+    {{- iconHtml | safe | trim | indent(2, true) if iconHtml -}}
+  </div>
+
+{% endif %}
