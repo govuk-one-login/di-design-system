@@ -6,6 +6,7 @@
 **/.python-version
 **/.vscode
 **/.idea
+node_modules/
 
 # Byte-compiled / optimized / dynamically generated files
 __pycache__/
@@ -40,3 +41,10 @@ tmp/
 # Operating System Files
 .DS_Store
 Thumbs.db
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
