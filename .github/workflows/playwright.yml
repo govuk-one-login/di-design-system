@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Design system tests
 on:
   push:
     branches: [main, master]
@@ -15,6 +15,11 @@ jobs:
           node-version: lts/*
       - name: Install dependencies
         run: npm ci
+      - name: Cache Playwright browsers
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
@@ -26,12 +31,25 @@ jobs:
           path: playwright-report/
           retention-days: 30
 
-      - name: Cache Playwright browsers
-        uses: actions/cache@v3
+  sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
         with:
-          path: ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
+          fetch-depth: 0
 
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
-        if: steps.cache-playwright.outputs.cache-hit != 'true'
+      - name: Restore cached coverage reports
+        id: cache-coverage-reports-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: "**/coverage"
+          key: ${{ runner.os }}-${{ github.run_id }}-coverage-reports
+
+      - name: Scan
+        uses: SonarSource/sonarcloud-github-action@v3.1.0
+        with:
+          args: >
+            -Dsonar.analysis.mode=publish
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
