@@ -11,7 +11,8 @@
     "start": "eleventy --serve",
     "build": "eleventy",
     "test": "playwright test",
-    "test:ui": "playwright test --ui"
+    "test:ui": "playwright test --ui",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -31,7 +32,10 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.5.0",
+    "@commitlint/config-conventional": "^20.5.0",
     "@playwright/test": "^1.58.2",
-    "@types/node": "^25.3.3"
+    "@types/node": "^25.3.3",
+    "husky": "^8.0.0"
   }
 }
