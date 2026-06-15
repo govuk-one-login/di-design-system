@@ -9075,6 +9075,7 @@ p + .govuk-heading-s,
 .app-side-nav__link[aria-current="page"] {
   font-weight: 700;
   color: #1d70b8;
+  cursor: default;
 }
 
 /* =========================================================
