@@ -27,6 +27,8 @@ export default function (eleventyConfig) {
     },
   });
 
+  eleventyConfig.addGlobalData("htmlClasses", "govuk-template--rebranded");
+
   eleventyConfig.addPassthroughCopy({
     "node_modules/@govuk-one-login/frontend-ui/build/esm/frontend/index.js":
       "assets/frontend-ui.js",
