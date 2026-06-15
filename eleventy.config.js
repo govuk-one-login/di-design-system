@@ -25,6 +25,11 @@ export default function (eleventyConfig) {
         // { text: "Patterns", href: "/patterns/" },
       ],
     },
+    footer: {
+      meta: {
+        items: [{ text: "Accessibility statement", href: "/" }],
+      },
+    },
   });
 
   eleventyConfig.addGlobalData("htmlClasses", "govuk-template--rebranded");
