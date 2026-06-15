@@ -19,9 +19,8 @@ export default function (eleventyConfig) {
       "/assets/frontend-ui.css",
     ],
     serviceNavigation: {
-      serviceUrl: "/",
+      serviceName: "Design hub",
       navigation: [
-        { text: "Design hub", href: "/" },
         { text: "Components", href: "/components/" },
         // { text: "Patterns", href: "/patterns/" },
       ],

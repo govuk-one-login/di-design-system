@@ -10,7 +10,6 @@ test("has progress button page title", async ({ page }) => {
 
 test("check links work in navigation", async ({ page }) => {
   await page.goto("/progress-button");
-  await page.getByRole("link", { name: "Design hub" }).click();
   await page.getByRole("link", { name: "Components" }).first().click();
 });
 
