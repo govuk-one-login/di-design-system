@@ -235,20 +235,6 @@ Components
     if (tabs.length > 0) {
       activateTab(tabs[0]);
     }
-
-    const copyButtons = document.querySelectorAll(".app-copy-button");
-    copyButtons.forEach((btn) => {
-      btn.addEventListener("click", function () {
-        const code = this.parentElement.querySelector("code").innerText;
-        navigator.clipboard.writeText(code).then(() => {
-          const originalText = this.innerText;
-          this.innerText = "Copied!";
-          setTimeout(() => {
-            this.innerText = originalText;
-          }, 2000);
-        });
-      });
-    });
   });
 </script>
 </div>
