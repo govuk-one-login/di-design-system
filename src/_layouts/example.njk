@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" class="govuk-template govuk-template--rebranded">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/assets/application.css">
+    <link rel="stylesheet" href="/assets/app-restyle.css">
+    <link rel="stylesheet" href="/assets/frontend-ui.css">
+  </head>
+  <body class="govuk-template__body">
+    <div class="govuk-width-container">
+      <main class="govuk-main-wrapper" id="main-content">
+        {{ content | safe }}
+      </main>
+    </div>
+    <script type="module" src="/assets/application.js"></script>
+    <script type="module" src="/assets/frontend-ui.js"></script>
+  </body>
+</html>
