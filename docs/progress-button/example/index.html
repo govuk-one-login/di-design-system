@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" class="govuk-template govuk-template--rebranded">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Progress button example</title>
+    <link rel="stylesheet" href="/assets/application.css">
+    <link rel="stylesheet" href="/assets/app-restyle.css">
+    <link rel="stylesheet" href="/assets/frontend-ui.css">
+  </head>
+  <body class="govuk-template__body">
+    <div class="govuk-width-container">
+      <main class="govuk-main-wrapper" id="main-content">
+        
+
+<noscript>
+  <style>
+    .noscript {
+      border: #F3F3F3 3px solid;
+      padding-top: 28px;
+      padding-left: 12px;
+      padding-right: 12px;
+      margin-bottom: 12px;
+    }
+  </style>
+</noscript>
+
+  <div class="noscript">
+    <noscript>
+      <div class="govuk-body" >
+        JavaScript is required to use this service.
+      </div>
+    </noscript>
+
+    <a href="#" role="button" draggable="false" data-module="govuk-button" class = "govuk-button govuk-button--progress" data-frontendui="di-progress-button" data-waiting-text="Wait" data-long-waiting-text="Keep waiting" data-error-page="/error" >
+        Continue
+</a>
+  </div>
+
+<script type="module">
+  import { initialiseProgressButtons } from "/assets/frontend-ui.js";
+  initialiseProgressButtons();
+</script>
+
+      </main>
+    </div>
+    <script type="module" src="/assets/application.js"></script>
+    <script type="module" src="/assets/frontend-ui.js"></script>
+  </body>
+</html>

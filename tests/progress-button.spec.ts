@@ -10,7 +10,6 @@ test("has progress button page title", async ({ page }) => {
 
 test("check links work in navigation", async ({ page }) => {
   await page.goto("/progress-button");
-  await page.getByRole("link", { name: "Design hub" }).click();
   await page.getByRole("link", { name: "Components" }).first().click();
 });
 
@@ -20,7 +19,7 @@ test("side bar links are visible", async ({ page }) => {
   const sideNav = page.getByRole("navigation", { name: /Components/i });
 
   await expect(
-    sideNav.getByRole("link", { name: "Progress button" }),
+    sideNav.getByText("Progress button"),
   ).toBeVisible();
   await expect(
     sideNav.getByRole("link", { name: /Component name 2/i }),

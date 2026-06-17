@@ -19,14 +19,20 @@ export default function (eleventyConfig) {
       "/assets/frontend-ui.css",
     ],
     serviceNavigation: {
-      serviceUrl: "/",
+      serviceName: "Design hub",
       navigation: [
-        { text: "Design hub", href: "/" },
         { text: "Components", href: "/components/" },
         // { text: "Patterns", href: "/patterns/" },
       ],
     },
+    footer: {
+      meta: {
+        items: [{ text: "Accessibility statement", href: "/" }],
+      },
+    },
   });
+
+  eleventyConfig.addGlobalData("htmlClasses", "govuk-template--rebranded");
 
   eleventyConfig.addPassthroughCopy({
     "node_modules/@govuk-one-login/frontend-ui/build/esm/frontend/index.js":
