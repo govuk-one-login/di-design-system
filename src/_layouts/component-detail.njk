@@ -1,0 +1,102 @@
+{% extends "layouts/sub-navigation.njk" %}
+
+{% from "build/components/progress-button/macro.njk" import frontendUiProgressButton %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter-from-desktop">
+      <nav class="app-side-nav" aria-label="{{ navLabel or 'Components' }}">
+        <ul class="app-side-nav__list">
+          {% for item in sideNav %}
+            <li class="app-side-nav__item{% if item.active %} app-side-nav__item--active{% endif %}">
+              {% if item.active %}
+                <a class="app-side-nav__link govuk-link--no-visited-state" aria-current="page">{{ item.text }}</a>
+              {% else %}
+                <a class="app-side-nav__link govuk-link--no-visited-state" href="{{ item.href }}">{{ item.text }}</a>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+    <div class="govuk-grid-column-three-quarters-from-desktop">
+      {{ appDocumentHeader({
+        title: title,
+        description: description
+      }) }}
+
+      <div class="app-example-wrapper">
+        <div class="app-example-toolbar">
+          <a href="{{ exampleUrl }}" target="_blank" class="govuk-link govuk-link--no-visited-state">Open this example in a new tab</a>
+        </div>
+
+        <div class="{% if iframeUrl %}app-example-preview-patterns{% else %}app-example-preview{% endif %}">
+          {% if iframeUrl %}
+            <iframe
+              title="{{ title }} example"
+              class="app-example__frame app-example__frame--resizable app-example__frame--xl app-example__frame--full"
+              src="{{ iframeUrl }}"
+              loading="eager"
+              style="height: 1044px; border: 0; width: 100%;"
+            ></iframe>
+          {% elif componentMacro == "progress-button" %}
+            {{ frontendUiProgressButton({
+              translations: {
+                text: "Continue",
+                waitingText: "Wait",
+                longWaitingText: "Keep waiting",
+                noJavascriptMessage: "JavaScript is required to use this service."
+              },
+              href: "#",
+              errorPage: "/error"
+            }) }}
+          {% endif %}
+        </div>
+
+        <div class="govuk-tabs app-tabs" data-module="govuk-tabs">
+          <ul class="govuk-tabs__list">
+            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+              <a class="govuk-tabs__tab" href="#example-html">HTML</a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="#example-nunjucks">Nunjucks</a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="#example-figma">Figma</a>
+            </li>
+          </ul>
+
+          <div class="govuk-tabs__panel" id="example-html">
+            <div class="app-example__code">
+              <button class="app-copy-button" type="button">Copy code</button>
+              <pre class="app-code-block"><code>{{ htmlCode }}</code></pre>
+            </div>
+          </div>
+
+          <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="example-nunjucks">
+            <div class="app-example__code">
+              <button class="app-copy-button" type="button">Copy code</button>
+              <pre class="app-code-block"><code>{{ nunjucksCode }}</code></pre>
+            </div>
+          </div>
+
+          <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="example-figma">
+            <p class="govuk-body">This component is available in the GOV.UK One Login Figma Design System.</p>
+            <p class="govuk-body">
+              <a class="govuk-link govuk-link--no-visited-state" href="{{ figmaUrl }}">View component in Figma</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {{ content | safe }}
+
+      {% include "layouts/shared/related.njk" %}
+    </div>
+  </div>
+
+  <script type="module">
+    import { initialiseProgressButtons } from "/assets/frontend-ui.js";
+    initialiseProgressButtons();
+  </script>
+{% endblock %}
