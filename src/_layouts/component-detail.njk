@@ -10,7 +10,7 @@
           {% for item in sideNav %}
             <li class="app-side-nav__item{% if item.active %} app-side-nav__item--active{% endif %}">
               {% if item.active %}
-                <a class="app-side-nav__link govuk-link--no-visited-state" aria-current="page">{{ item.text }}</a>
+                <a class="app-side-nav__link govuk-link--no-visited-state" href="{{ item.href or page.url }}" aria-current="page">{{ item.text }}</a>
               {% else %}
                 <a class="app-side-nav__link govuk-link--no-visited-state" href="{{ item.href }}">{{ item.text }}</a>
               {% endif %}
@@ -21,9 +21,9 @@
     </div>
     <div class="govuk-grid-column-three-quarters-from-desktop">
       {{ appDocumentHeader({
-        title: title,
-        description: description
+        title: title
       }) }}
+      {% if description %}<p class="govuk-body-l">{{ description }}</p>{% endif %}
 
       <div class="app-example-wrapper">
         <div class="app-example-toolbar">
