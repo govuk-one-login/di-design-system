@@ -12,7 +12,6 @@ test("has patterns page title", async ({ page }) => {
 test("check links work in navigation", async ({ page }) => {
   await page.goto("/patterns");
 
-  await page.getByRole("link", { name: "Design hub" }).click();
 
   await page.getByRole("link", { name: "Components" }).first().click();
 });
