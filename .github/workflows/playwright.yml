@@ -6,7 +6,7 @@ on:
     branches: [main, master]
 jobs:
   test:
-    timeout-minutes: 30
+    timeout-minutes: 20
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,26 +16,39 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci --prefer-offline --no-audit
-      - name: Get Playwright version
-        id: playwright-version
-        run: echo "version=$(npx playwright --version | awk '{print $2}')" >> $GITHUB_OUTPUT
       - name: Cache Playwright browsers
         id: playwright-cache
         uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-${{ steps.playwright-version.outputs.version }}
+          key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}-chromium
+          restore-keys: |
+            ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}-
+            ${{ runner.os }}-playwright-
       - name: Install Playwright Browsers
         if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npx playwright install chromium --with-deps
-      - name: Install Playwright system deps
-        if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps chromium
+        run: |
+          # Try with retry mechanism
+          for i in {1..3}; do
+            echo "Browser installation attempt $i"
+            if npx playwright install chromium; then
+              echo "Browser installation successful"
+              break
+            else
+              echo "Browser installation failed, retrying..."
+              sleep 10
+            fi
+          done
+          npx playwright install-deps chromium
+        timeout-minutes: 10
+      - name: Verify Playwright installation
+        run: npx playwright --version
       - name: Run Playwright tests
-        run: npx playwright test --project=chromium
+        run: npx playwright test --project=chromium --max-failures=5
+        timeout-minutes: 8
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
           name: playwright-report
           path: playwright-report/
-          retention-days: 30
+          retention-days: 7
