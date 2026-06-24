@@ -19,7 +19,7 @@ test("side bar links are visible", async ({ page }) => {
   const sideNav = page.getByRole("navigation", { name: /Components/i });
 
   await expect(
-    sideNav.getByRole("link", { name: "Progress button" }),
+    sideNav.getByText("Progress button"),
   ).toBeVisible();
   await expect(
     sideNav.getByRole("link", { name: /Component name 2/i }),

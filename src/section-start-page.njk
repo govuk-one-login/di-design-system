@@ -27,7 +27,7 @@ layout: page
 
         <div class="app-example-wrapper">
           <div class="app-example-toolbar">
-            <a href="#" class="govuk-link govuk-link--no-visited-state">
+            <a href="/section-start-page-example/" target="_blank" class="govuk-link govuk-link--no-visited-state">
               Open this example in a new tab
               <span class="govuk-visually-hidden">: back link</span>
             </a>
@@ -125,19 +125,5 @@ layout: page
     if (tabs.length > 0) {
       activateTab(tabs[0]);
     }
-
-    const copyButtons = document.querySelectorAll(".app-copy-button");
-    copyButtons.forEach((btn) => {
-      btn.addEventListener("click", function () {
-        const code = this.parentElement.querySelector("code").innerText;
-        navigator.clipboard.writeText(code).then(() => {
-          const originalText = this.innerText;
-          this.innerText = "Copied!";
-          setTimeout(() => {
-            this.innerText = originalText;
-          }, 2000);
-        });
-      });
-    });
   });
 </script>

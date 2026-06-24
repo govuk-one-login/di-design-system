@@ -1,0 +1,23 @@
+---
+layout: example
+title: Progress button example
+permalink: /progress-button/example/
+---
+
+{% from "build/components/progress-button/macro.njk" import frontendUiProgressButton %}
+
+{{ frontendUiProgressButton({
+  translations: {
+    text: "Continue",
+    waitingText: "Wait",
+    longWaitingText: "Keep waiting",
+    noJavascriptMessage: "JavaScript is required to use this service."
+  },
+  href: "#",
+  errorPage: "/error"
+}) }}
+
+<script type="module">
+  import { initialiseProgressButtons } from "/assets/frontend-ui.js";
+  initialiseProgressButtons();
+</script>

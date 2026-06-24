@@ -1,0 +1,29 @@
+---
+layout: example
+title: Section start page example
+permalink: /section-start-page-example/
+---
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+<h1 class="govuk-heading-xl">Confirm your identity</h1>
+
+<p class="govuk-body">To access this service you need to confirm your identity.</p>
+
+<p class="govuk-body">In this section you'll need to:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>provide your photo ID</li>
+  <li>answer some security questions</li>
+</ul>
+
+{{ govukInsetText({
+  text: "You'll need your passport or driving licence to hand."
+}) }}
+
+{{ govukButton({
+  text: "Continue",
+  href: "#",
+  isStartButton: false
+}) }}
