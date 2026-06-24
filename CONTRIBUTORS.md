@@ -22,8 +22,31 @@ We welcome contributions from the community. If you have a question, idea or sug
 
 ### How to add pages
 
-- In the `src` folder create a `.njk` file with the title of the page and layout
-- Add all details into the body with the known conventions of Nunjucks (there is an example with the progress button)
+- In the `src` folder create a `.md` file with the title of the page and layout
+- Create a new page with the following template:
+
+```md
+---
+layout: component-detail
+title: Progress button
+description: Help users understand that they need to wait for something to finish happening.
+componentMacro: progress-button
+exampleUrl: /progress-button/example/
+htmlCode: '<button class="govuk-button">Continue</button>'
+nunjucksCode: "{{ govukButton({ text: 'Continue' }) }}"
+figmaUrl: "#"
+navLabel: Components
+sideNav:
+  - text: Progress button
+    active: true
+  - text: Component name 2
+    href: "#"
+  - text: Component name 3
+    href: "#"
+---
+
+[your content goes here]
+```
 
 ## Contributors list
 
