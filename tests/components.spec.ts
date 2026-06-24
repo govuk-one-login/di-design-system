@@ -12,6 +12,7 @@ test("has components page title", async ({ page }) => {
 test("check links work in navigation", async ({ page }) => {
   await page.goto("/components");
 
+
   await page.getByRole("link", { name: "Components" }).first().click();
 });
 
