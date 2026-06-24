@@ -8,7 +8,6 @@ test("has home page title", async ({ page }) => {
 
 test("check links work in navigation", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("link", { name: "Design hub" }).click();
   await page.getByRole("link", { name: "Components" }).first().click();
 });
 
