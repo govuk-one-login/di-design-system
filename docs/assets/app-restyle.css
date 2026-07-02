@@ -9213,6 +9213,34 @@ p + .govuk-heading-s,
   white-space: nowrap;
 }
 
+/* GOV.UK header link: always white in all states, no dot separator */
+.govuk-header__homepage-link:link,
+.govuk-header__homepage-link:visited,
+.govuk-header__homepage-link:hover,
+.govuk-header__homepage-link:active {
+  color: #ffffff;
+}
+
+/* Remove the dot between the GOV.UK logo and product name.
+   The whitespace text node between </svg> and <span> renders as a dot.
+   Flexbox collapses whitespace-only text nodes so the dot disappears. */
+.govuk-header__homepage-link {
+  display: inline-flex !important;
+  align-items: center;
+  word-spacing: normal;
+  text-decoration: none;
+}
+
+/* Remove gap between sidebar and content columns */
+.govuk-grid-column-one-quarter {
+  padding-top: 0 !important;
+}
+
+/* Remove sub-header gap above progress button heading */
+.govuk-heading-xl.govuk-\!-margin-bottom-4 {
+  margin-top: 0;
+}
+
 /* ------------------------------------------------
    Mobile: tabs stack, selected panel appears
    directly beneath the selected tab

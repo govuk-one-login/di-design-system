@@ -4,8 +4,22 @@ title: Progress button
 description: Help users understand that they need to wait for something to finish happening.
 componentMacro: progress-button
 exampleUrl: /progress-button/example/
-htmlCode: '<button class="govuk-button">Continue</button>'
-nunjucksCode: "{{ govukButton({ text: 'Continue' }) }}"
+htmlCode: |
+  &lt;a href="#" role="button" draggable="false" class="govuk-button govuk-button--progress" data-module="govuk-button" data-frontendui="di-progress-button" data-waiting-text="Wait" data-long-waiting-text="Keep waiting" data-error-page="/error"&gt;
+    Continue
+  &lt;/a&gt;
+nunjucksCode: |
+  {% from 'build/components/progress-button/macro.njk' import frontendUiProgressButton %}
+  {{ frontendUiProgressButton({
+    translations: {
+      text: 'Continue',
+      waitingText: 'Wait',
+      longWaitingText: 'Keep waiting',
+      noJavascriptMessage: 'JavaScript is required to use this service.'
+    },
+    href: '#',
+    errorPage: '/error'
+  }) }}
 figmaUrl: "#"
 navLabel: Components
 sideNav:

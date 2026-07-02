@@ -175,14 +175,28 @@ Components
           <div class="govuk-tabs__panel" id="example-html">
             <div class="app-example__code">
               <button class="app-copy-button" type="button">Copy code</button>
-              <pre class="app-code-block"><code><button class="govuk-button">Continue</button></code></pre>
+              <pre class="app-code-block"><code>&lt;a href="#" role="button" draggable="false" class="govuk-button govuk-button--progress" data-module="govuk-button" data-frontendui="di-progress-button" data-waiting-text="Wait" data-long-waiting-text="Keep waiting" data-error-page="/error"&gt;
+  Continue
+&lt;/a&gt;
+</code></pre>
             </div>
           </div>
 
           <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="example-nunjucks">
             <div class="app-example__code">
               <button class="app-copy-button" type="button">Copy code</button>
-              <pre class="app-code-block"><code>{{ govukButton({ text: 'Continue' }) }}</code></pre>
+              <pre class="app-code-block"><code>{% from &#39;build/components/progress-button/macro.njk&#39; import frontendUiProgressButton %}
+{{ frontendUiProgressButton({
+  translations: {
+    text: &#39;Continue&#39;,
+    waitingText: &#39;Wait&#39;,
+    longWaitingText: &#39;Keep waiting&#39;,
+    noJavascriptMessage: &#39;JavaScript is required to use this service.&#39;
+  },
+  href: &#39;#&#39;,
+  errorPage: &#39;/error&#39;
+}) }}
+</code></pre>
             </div>
           </div>
 
@@ -250,6 +264,8 @@ Components
     import { initialiseProgressButtons } from "/assets/frontend-ui.js";
     initialiseProgressButtons();
   </script>
+
+  <script src="/assets/app-copy.js"></script>
         </main>
       </div>
 
@@ -285,7 +301,7 @@ Components
           <h2 class="govuk-visually-hidden">Support links</h2>
             <ul class="govuk-footer__inline-list">
                 <li class="govuk-footer__inline-list-item">
-                  <a class="govuk-footer__link" href="/">
+                  <a class="govuk-footer__link" href="https://signin.account.gov.uk/accessibility-statement">
                     Accessibility statement
                   </a>
                 </li>
