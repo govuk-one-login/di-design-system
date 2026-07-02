@@ -27,7 +27,7 @@ export default function (eleventyConfig) {
     },
     footer: {
       meta: {
-        items: [{ text: "Accessibility statement", href: "/" }],
+        items: [{ text: "Accessibility statement", href: "https://signin.account.gov.uk/accessibility-statement" }],
       },
     },
   });
