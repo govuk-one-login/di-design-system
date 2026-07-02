@@ -39,6 +39,10 @@ export default function (eleventyConfig) {
       "assets/frontend-ui.js",
     "node_modules/@govuk-one-login/frontend-ui/build/all.css":
       "assets/frontend-ui.css",
+    "node_modules/@x-govuk/govuk-eleventy-plugin/node_modules/govuk-frontend/dist/govuk/assets/images/favicon.svg":
+      "assets/images/favicon.svg",
+    "node_modules/@x-govuk/govuk-eleventy-plugin/node_modules/govuk-frontend/dist/govuk/assets/images/favicon.ico":
+      "assets/images/favicon.ico",
   });
 
   eleventyConfig.on("eleventy.config", (cfg) => {

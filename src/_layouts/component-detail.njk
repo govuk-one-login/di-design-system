@@ -69,14 +69,14 @@
           <div class="govuk-tabs__panel" id="example-html">
             <div class="app-example__code">
               <button class="app-copy-button" type="button">Copy code</button>
-              <pre class="app-code-block"><code>{{ htmlCode }}</code></pre>
+              <pre class="app-code-block"><code>{{ htmlCode | safe }}</code></pre>
             </div>
           </div>
 
           <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="example-nunjucks">
             <div class="app-example__code">
               <button class="app-copy-button" type="button">Copy code</button>
-              <pre class="app-code-block"><code>{{ nunjucksCode }}</code></pre>
+              <pre class="app-code-block"><code>{{ nunjucksCode | escape }}</code></pre>
             </div>
           </div>
 
@@ -99,4 +99,6 @@
     import { initialiseProgressButtons } from "/assets/frontend-ui.js";
     initialiseProgressButtons();
   </script>
+
+  <script src="/assets/app-copy.js"></script>
 {% endblock %}
