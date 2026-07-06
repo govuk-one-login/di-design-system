@@ -1,0 +1,41 @@
+name: Update visual snapshots
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-snapshots:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Update visual snapshots
+        run: npx playwright test --project=chromium tests/visual --update-snapshots
+        env:
+          CI: true
+
+      - name: Commit and push updated snapshots
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin ${{ github.ref_name }}
+          git checkout ${{ github.ref_name }}
+          git add -A
+          git commit -m "chore: update visual snapshots" --no-verify || echo "No changes to commit"
+          git push origin ${{ github.ref_name }} || exit 1
