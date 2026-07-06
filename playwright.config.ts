@@ -22,6 +22,12 @@ export default defineConfig({
   projects: [
     {
       name: "chromium",
+      testIgnore: "**/visual/**",
+      use: { ...devices["Desktop Chrome"], headless: true },
+    },
+    {
+      name: "visual",
+      testMatch: "**/visual/**/*.spec.ts",
       use: { ...devices["Desktop Chrome"], headless: true },
     },
   ],

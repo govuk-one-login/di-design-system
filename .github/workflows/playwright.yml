@@ -47,7 +47,7 @@ jobs:
         run: npx playwright install-deps chromium
 
       - name: Run functional tests
-        run: npx playwright test --project=chromium --ignore=tests/visual
+        run: npx playwright test --project=chromium
         env:
           CI: true
 
@@ -94,7 +94,7 @@ jobs:
         run: npx playwright install-deps chromium
 
       - name: Run visual regression tests
-        run: npx playwright test --project=chromium tests/visual
+        run: npx playwright test --project=visual
         env:
           CI: true
 
