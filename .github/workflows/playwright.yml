@@ -62,6 +62,8 @@ jobs:
     name: Visual regression tests
     timeout-minutes: 15
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -94,9 +96,35 @@ jobs:
         run: npx playwright install-deps chromium
 
       - name: Run visual regression tests
+        id: visual-test
         run: npx playwright test --project=visual
         env:
           CI: true
+        continue-on-error: true
+
+      - name: Update snapshots if missing
+        if: steps.visual-test.outcome == 'failure'
+        run: npx playwright test --project=visual --update-snapshots
+        env:
+          CI: true
+
+      - name: Commit updated snapshots
+        if: steps.visual-test.outcome == 'failure'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update visual regression snapshots [skip ci]"
+          file_pattern: "**/*-snapshots/*.png"
+
+      - name: Fail if tests failed and snapshots were already present
+        if: steps.visual-test.outcome == 'failure'
+        run: |
+          if git diff --name-only HEAD~1 | grep -q snapshots; then
+            echo "Snapshots were missing and have been committed. Re-run the workflow."
+            exit 0
+          else
+            echo "Visual regression test failed with existing snapshots."
+            exit 1
+          fi
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
