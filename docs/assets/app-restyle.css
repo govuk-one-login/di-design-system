@@ -921,10 +921,10 @@
   color: #ffffff !important;
   padding-top: 48px;
   padding-bottom: 48px;
-  margin-left: -9999px;
-  margin-right: -9999px;
-  padding-left: 9999px;
-  padding-right: 9999px;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
   overflow: hidden;
   margin-top: -40px !important;
 }
@@ -957,10 +957,10 @@
   background-color: #f4f8fb;
   padding-top: 40px;
   padding-bottom: 40px;
-  margin-left: -9999px;
-  margin-right: -9999px;
-  padding-left: 9999px;
-  padding-right: 9999px;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
   overflow: hidden;
 }
 
