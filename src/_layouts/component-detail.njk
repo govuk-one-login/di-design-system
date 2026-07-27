@@ -53,30 +53,30 @@
           {% endif %}
         </div>
 
-        <div class="govuk-tabs app-tabs" data-module="govuk-tabs">
+        <div class="govuk-tabs app-tabs" data-module="app-tabs" role="tablist">
           <ul class="govuk-tabs__list">
-            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-              <a class="govuk-tabs__tab" href="#example-html">HTML</a>
+            <li class="govuk-tabs__list-item" role="presentation">
+              <a class="govuk-tabs__tab" href="#example-html" role="tab" aria-selected="false" aria-controls="example-html">HTML</a>
             </li>
-            <li class="govuk-tabs__list-item">
-              <a class="govuk-tabs__tab" href="#example-nunjucks">Nunjucks</a>
+            <li class="govuk-tabs__list-item" role="presentation">
+              <a class="govuk-tabs__tab" href="#example-nunjucks" role="tab" aria-selected="false" aria-controls="example-nunjucks">Nunjucks</a>
             </li>
-            <li class="govuk-tabs__list-item">
-              <a class="govuk-tabs__tab" href="#example-figma">Figma</a>
+            <li class="govuk-tabs__list-item" role="presentation">
+              <a class="govuk-tabs__tab" href="#example-figma" role="tab" aria-selected="false" aria-controls="example-figma">Figma</a>
             </li>
           </ul>
 
-          <div class="govuk-tabs__panel" id="example-html">
+          <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="example-html">
             <div class="app-example__code">
               <button class="app-copy-button" type="button">Copy code</button>
-              <pre class="app-code-block"><code>{{ htmlCode }}</code></pre>
+              <pre class="app-code-block"><code>{{ htmlCode | safe }}</code></pre>
             </div>
           </div>
 
           <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="example-nunjucks">
             <div class="app-example__code">
               <button class="app-copy-button" type="button">Copy code</button>
-              <pre class="app-code-block"><code>{{ nunjucksCode }}</code></pre>
+              <pre class="app-code-block"><code>{{ nunjucksCode | escape }}</code></pre>
             </div>
           </div>
 
@@ -98,5 +98,13 @@
   <script type="module">
     import { initialiseProgressButtons } from "/assets/frontend-ui.js";
     initialiseProgressButtons();
+  </script>
+
+  <script src="/assets/app-copy.js"></script>
+  <script>
+    document.querySelectorAll('.govuk-service-navigation__item').forEach(function(item) {
+      var link = item.querySelector('.govuk-service-navigation__link[href="/components/"]');
+      if (link) item.classList.add('govuk-service-navigation__item--active');
+    });
   </script>
 {% endblock %}
