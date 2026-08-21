@@ -31,6 +31,10 @@ sideNav:
     href: /progress-button/
   - text: Toggle to Welsh
     active: true
+  - text: Component name 2
+    href: "#"
+  - text: Component name 3
+    href: "#"
 ---
 
 ## When to use this component

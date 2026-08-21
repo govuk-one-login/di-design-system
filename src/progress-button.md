@@ -27,6 +27,10 @@ sideNav:
     active: true
   - text: Toggle to Welsh
     href: /toggle-to-welsh/
+  - text: Component name 2
+    href: "#"
+  - text: Component name 3
+    href: "#"
 ---
 
 ## When to use this component
