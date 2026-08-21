@@ -1,0 +1,15 @@
+---
+layout: example
+title: Toggle to Welsh example
+permalink: /toggle-to-welsh/example/
+---
+
+{% from "build/components/language-select/macro.njk" import frontendUiLanguageSelect %}
+
+{{ frontendUiLanguageSelect({
+  translations: {
+    ariaLabel: "Language switcher"
+  },
+  activeLanguage: "en",
+  url: "/toggle-to-welsh/example/"
+}) }}
