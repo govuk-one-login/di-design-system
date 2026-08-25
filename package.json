@@ -8,7 +8,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "eleventy --serve",
+    "start": "eleventy --serve --port=${PORT:-8080}",
     "build": "eleventy",
     "test": "playwright test",
     "test:ui": "playwright test --ui",
