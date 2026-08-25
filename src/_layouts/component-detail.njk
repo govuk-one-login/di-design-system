@@ -1,6 +1,7 @@
 {% extends "layouts/sub-navigation.njk" %}
 
 {% from "build/components/progress-button/macro.njk" import frontendUiProgressButton %}
+{% from "build/components/language-select/macro.njk" import frontendUiLanguageSelect %}
 
 {% block content %}
   <div class="govuk-grid-row">
@@ -25,6 +26,8 @@
       }) }}
       {% if description %}<p class="govuk-body-l">{{ description }}</p>{% endif %}
 
+      {% set hasExample = exampleUrl or iframeUrl or componentMacro or htmlCode or nunjucksCode %}
+      {% if hasExample %}
       <div class="app-example-wrapper">
         <div class="app-example-toolbar">
           <a href="{{ exampleUrl }}" target="_blank" class="govuk-link govuk-link--no-visited-state">Open this example in a new tab</a>
@@ -39,6 +42,14 @@
               loading="eager"
               style="height: 1044px; border: 0; width: 100%;"
             ></iframe>
+          {% elif componentMacro == "language-select" %}
+            {{ frontendUiLanguageSelect({
+              translations: {
+                ariaLabel: "Language switcher"
+              },
+              activeLanguage: "en",
+              url: page.url
+            }) }}
           {% elif componentMacro == "progress-button" %}
             {{ frontendUiProgressButton({
               translations: {
@@ -88,6 +99,7 @@
           </div>
         </div>
       </div>
+      {% endif %}
 
       {{ content | safe }}
 

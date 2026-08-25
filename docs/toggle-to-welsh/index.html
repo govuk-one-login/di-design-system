@@ -2,7 +2,7 @@
 <html lang="en" class="govuk-template govuk-template--rebranded">
   <head>
     <meta charset="utf-8">
-    <title>Sitemap - GDS Design System | GOV.UK One Login</title>
+    <title>Toggle to Welsh - GDS Design System | GOV.UK One Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#1d70b8">
 
@@ -13,8 +13,8 @@
   <link rel="stylesheet" href="/assets/frontend-ui.css">
 
 
-  <meta property="og:title" content="Sitemap">
-
+  <meta property="og:title" content="Toggle to Welsh">
+<meta property="og:description" name="description" content="Let users change the language used in a service from English to Welsh and from Welsh to English.">
 <link rel="icon" href="/assets/images/favicon.ico" sizes="any"><link rel="mask-icon" href="/assets/images/govuk-icon-mask.svg" color="#1d70b8"><link rel="apple-touch-icon" href="/assets/images/govuk-icon-180.png">
     <meta property="og:image" content="/assets/images/govuk-opengraph-image.png">
   </head>
@@ -102,43 +102,154 @@ Components
 
         </header>
       <div class="govuk-width-container">
+  
         <main class="govuk-main-wrapper" id="main-content">
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Sitemap</h1>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter-from-desktop">
+      <nav class="app-side-nav" aria-label="Components">
+        <ul class="app-side-nav__list">
+            <li class="app-side-nav__item">
+                <a class="app-side-nav__link govuk-link--no-visited-state" href="/progress-button/">Progress button</a>
+            </li>
+            <li class="app-side-nav__item app-side-nav__item--active">
+                <a class="app-side-nav__link govuk-link--no-visited-state" href="/toggle-to-welsh/" aria-current="page">Toggle to Welsh</a>
+            </li>
+            <li class="app-side-nav__item">
+                <a class="app-side-nav__link govuk-link--no-visited-state" href="#">Component name 2</a>
+            </li>
+            <li class="app-side-nav__item">
+                <a class="app-side-nav__link govuk-link--no-visited-state" href="#">Component name 3</a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="govuk-grid-column-three-quarters-from-desktop">
+      
+<header class="app-document-header">
+  <h1 class="govuk-heading-xl">Toggle to Welsh</h1>
+</header>
 
-    
 
-      <div class="govuk-!-margin-bottom-4">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
-          <a class="govuk-link" href="/progress-button/">Progress button</a>
-        </h2>
-          <p class="govuk-body">Help users understand that they need to wait for something to finish happening.</p>
-        
+<p class="govuk-body-l">Let users change the language used in a service from English to Welsh and from Welsh to English.</p>
+      <div class="app-example-wrapper">
+        <div class="app-example-toolbar">
+          <a href="/toggle-to-welsh/example/" target="_blank" class="govuk-link govuk-link--no-visited-state">Open this example in a new tab</a>
+        </div>
+
+        <div class="app-example-preview">
+            
+<nav
+  class="language-select "
+  aria-label="Language switcher"
+  role="navigation"
+>
+  <ul
+    class="govuk-list language-select__list govuk-body-s govuk-!-margin-0"
+    role="list"
+  >
+    <li class="language-select__list-item" role="listitem">
+      <span aria-current="true">English</span>
+    </li>
+    <li class="language-select__list-item" role="listitem">
+      <a
+        class="govuk-link govuk-link--no-visited-state"
+        href="/toggle-to-welsh/?lng=cy"
+        data-journey-click="link - click:lang-select:cy"
+        rel="alternate"
+        hreflang="cy"
+        lang="cy"
+        role="link"
+      >Cymraeg<div class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</div></a>
+    </li>
+  </ul>
+</nav>
+
+        </div>
+
+        <div class="govuk-tabs app-tabs" data-module="app-tabs" role="tablist">
+          <ul class="govuk-tabs__list">
+            <li class="govuk-tabs__list-item" role="presentation">
+              <a class="govuk-tabs__tab" href="#example-html" role="tab" aria-selected="false" aria-controls="example-html">HTML</a>
+            </li>
+            <li class="govuk-tabs__list-item" role="presentation">
+              <a class="govuk-tabs__tab" href="#example-nunjucks" role="tab" aria-selected="false" aria-controls="example-nunjucks">Nunjucks</a>
+            </li>
+            <li class="govuk-tabs__list-item" role="presentation">
+              <a class="govuk-tabs__tab" href="#example-figma" role="tab" aria-selected="false" aria-controls="example-figma">Figma</a>
+            </li>
+          </ul>
+
+          <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="example-html">
+            <div class="app-example__code">
+              <button class="app-copy-button" type="button">Copy code</button>
+              <pre class="app-code-block"><code>&lt;nav class="language-select" aria-label="Language switcher" role="navigation"&gt;
+  &lt;ul class="govuk-list language-select__list govuk-body-s govuk-!-margin-0" role="list"&gt;
+    &lt;li class="language-select__list-item" role="listitem"&gt;
+      &lt;span aria-current="true"&gt;English&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li class="language-select__list-item" role="listitem"&gt;
+      &lt;a class="govuk-link govuk-link--no-visited-state" href="?lng=cy" rel="alternate" hreflang="cy" lang="cy"&gt;Cymraeg&lt;span class="govuk-visually-hidden"&gt;Newid yr iaith ir Gymraeg&lt;/span&gt;&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+            </div>
+          </div>
+
+          <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="example-nunjucks">
+            <div class="app-example__code">
+              <button class="app-copy-button" type="button">Copy code</button>
+              <pre class="app-code-block"><code>{% from &#39;build/components/language-select/macro.njk&#39; import frontendUiLanguageSelect %}
+{{ frontendUiLanguageSelect({
+  translations: {
+    ariaLabel: &#39;Language switcher&#39;
+  },
+  activeLanguage: &#39;en&#39;,
+  url: currentUrl
+}) }}
+</code></pre>
+            </div>
+          </div>
+
+          <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="example-figma">
+            <p class="govuk-body">This component is available in the GOV.UK One Login Figma Design System.</p>
+            <p class="govuk-body">
+              <a class="govuk-link govuk-link--no-visited-state" href="#">View component in Figma</a>
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="govuk-!-margin-bottom-4">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
-          <a class="govuk-link" href="/section-start-page/">Section start page</a>
-        </h2>
-          <p class="govuk-body">Help users to understand which section of the journey they are in, what tasks they’ll need to complete and why.</p>
-        
-      </div>
-      <div class="govuk-!-margin-bottom-4">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
-          <a class="govuk-link" href="/style-guide/">GOV.UK One Login A to Z style guide</a>
-        </h2>
-          <p class="govuk-body">Style points specific to GOV.UK One Login that are not covered by the central GOV.UK style guide.</p>
-        
-      </div>
-      <div class="govuk-!-margin-bottom-4">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
-          <a class="govuk-link" href="/toggle-to-welsh/">Toggle to Welsh</a>
-        </h2>
-          <p class="govuk-body">Let users change the language used in a service from English to Welsh and from Welsh to English.</p>
-        
-      </div>
+
+      <h2 id="when-to-use-this-component" tabindex="-1" class="govuk-heading-l">When to use this component</h2>
+<p class="govuk-body">Example section…</p>
+<h2 id="when-not-to-use-this-component" tabindex="-1" class="govuk-heading-l">When not to use this component</h2>
+<p class="govuk-body">Example section…</p>
+<h2 id="how-it-works" tabindex="-1" class="govuk-heading-l">How it works</h2>
+<p class="govuk-body">Example section…</p>
+<h2 id="accessibility" tabindex="-1" class="govuk-heading-l">Accessibility</h2>
+<p class="govuk-body">Example section…</p>
+<h2 id="technical-guidance" tabindex="-1" class="govuk-heading-l">Technical guidance</h2>
+<p class="govuk-body">Example section…</p>
+<h2 id="research-on-this-component" tabindex="-1" class="govuk-heading-l">Research on this component</h2>
+<p class="govuk-body">Example section…</p>
+
+
+
+    </div>
   </div>
-</div>
+
+  <script type="module">
+    import { initialiseProgressButtons } from "/assets/frontend-ui.js";
+    initialiseProgressButtons();
+  </script>
+
+  <script src="/assets/app-copy.js"></script>
+  <script>
+    document.querySelectorAll('.govuk-service-navigation__item').forEach(function(item) {
+      var link = item.querySelector('.govuk-service-navigation__link[href="/components/"]');
+      if (link) item.classList.add('govuk-service-navigation__item--active');
+    });
+  </script>
         </main>
       </div>
 

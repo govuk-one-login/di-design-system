@@ -47,6 +47,14 @@ export default function (eleventyConfig) {
 
   eleventyConfig.on("eleventy.config", (cfg) => {
     const njkLib = cfg.userConfig?.libraryOverrides?.njk;
+    if (njkLib?.addGlobal) {
+      // Stand-in for the frontend-ui middleware helper, so components
+      // that build language-switch URLs can render as static examples
+      njkLib.addGlobal("addLanguageParam", (code, url) => {
+        const base = url || "";
+        return `${base}${base.includes("?") ? "&" : "?"}lng=${code}`;
+      });
+    }
     if (njkLib?.loaders?.[0]?.searchPaths) {
       njkLib.loaders[0].searchPaths.push(
         path.join(appRoot, "node_modules/@govuk-one-login/frontend-ui"),
