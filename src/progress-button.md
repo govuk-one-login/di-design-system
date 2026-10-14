@@ -127,8 +127,6 @@ The progress button uses JavaScript. A standard [Button component](https://desig
 
 Add body copy above the button to help non-JavaScript users understand they need to wait, and for how long.
 
-/// EXAMPLE IMAGE - NEED MATT TO ADD
-
 ## Research on this component
 
 Research into progress indicators in public and private sector services found that the most important thing is to provide users with appropriate feedback about the delay.
