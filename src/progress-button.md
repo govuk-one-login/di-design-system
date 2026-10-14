@@ -1,7 +1,7 @@
 ---
 layout: component-detail
 title: Progress button
-description: Help users understand that they need to wait for something to finish happening.
+description: Help users understand that they need to wait. Builds on the [Button component](https://design-system.service.gov.uk/components/button/) from the GOV.UK Design System.
 componentMacro: progress-button
 exampleUrl: /progress-button/example/
 htmlCode: |
@@ -35,64 +35,117 @@ sideNav:
 
 ## When to use this component
 
-Use this component when there is more than a 2 second delay between the user clicking a button and seeing the result, such as a page loading.
+Use this component when the user has to wait more than 2 seconds and less than 10 seconds for something to happen after selecting a button.
 
-**2 seconds is a short delay, so use this component with care.** Overusing it, especially on standard transactional steps, can make the service feel slower than it really is. This component is better suited to things like submitting information to an external API or performing a short backend process.
+This will usually be for things like:
+* the system submitting information to an external API
+* a short backend process like a fraud check
 
 ## When not to use this component
 
-Try to make your service respond quickly, so you don't need to use a progress button.
+Use this component sparingly. Using it on standard transactional steps can make the service feel slower than it really is.
 
-Do not use this component when the user needs to take further action, such as checking their email, opening another app, or retrieving a security code. The progress button is only for situations where the user is expected to wait, not when they need to do something else.
+It’s better to make your service respond quickly so that you do not need a progress button.
 
-Do not use this component when there is less than a 2 second delay between the user clicking a button and seeing the result. Users may notice a brief delay, but they stay focused and do not need reassurance. Using a progress button here can confuse the user or make the service feel slower than it is.
+### If the user needs to do something else away from the page
 
-Do not use this component when there is more than a 10 second delay between the user clicking a button and seeing the result. After about 10 seconds, the average attention span is maxed out and users don't retain enough short-term memory to easily continue when the result appears. Focus on reducing that time, or use another technique – for example, showing determinate progress on an interstitial page or allowing the user to continue and be notified when the action is complete.
+The progress button is only for situations where the user is expected to stay on the page and wait.
+
+Do not use a progress button if the user needs to go and do something else like:
+* check their email
+* open another app
+* get a security code
+
+### If the user has to wait less than 2 seconds
+
+Do not use this component if the user has to wait less than 2 seconds, because:
+
+* users usually stay on the page and do not need reassurance if the wait is less than 2 seconds
+* a progress button before 2 seconds could make the service feel slower than it is
+
+### If the user has to wait more than 10 seconds
+The progress button is not designed for long or uncertain waits.
+
+Do not use this component if the user has to wait more than 10 seconds for something to happen.
+
+After 10 seconds:
+* the user’s attention starts to drift or their memory of what they were doing fades
+* people tend to question if the service is still working
+
+This means that with longer waits it’s better to reduce the waiting time, if you can.
+
+If that’s not possible, communicate progress in other ways such as:
+* a new page that explains things to the user with clear next steps
+* letting users continue and sending them an account or email notification later
 
 ## How it works
 
-A progress button gives users immediate, contextual feedback after they click. It helps reassure them that something is happening and reduces the risk of repeated submissions.
+// NEED BOLD IN FOLLOWING:
 
-The component builds on the default GOV.UK Button to show an active loading state when clicked.
+The progress button reassures users that something is happening and makes them more likely to keep waiting.
 
-After a user clicks the button:
+It builds on the Button component from the GOV.UK Design System to show that something is loading or processing.
 
-- The button changes to <span class="app-colour-chip">govuk-colour("dark-grey") (#505a5f)</span> to keep the user's focus
-- A spinner appears to indicate that something is happening
-- The button text updates at specific points to reassure something is still happening:
+After a user selects the button the:
+* button changes colour and a spinner appears
+* button text updates to BOLDBOLDBOLD Wait to reassure the user something is still happening, and updates again after 5 seconds to BOLDBOLDBOLD Keep waiting if they need to wait longer
 
 <table class="govuk-table">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header">Response time</th>
       <th scope="col" class="govuk-table__header">Button text</th>
-      <th scope="col" class="govuk-table__header">Welsh translation of button text</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">0.1 seconds</th>
       <td class="govuk-table__cell">Wait</td>
-      <td class="govuk-table__cell">Aros</td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">5 seconds</th>
       <td class="govuk-table__cell">Keep waiting</td>
-      <td class="govuk-table__cell">Parhau i aros</td>
     </tr>
   </tbody>
 </table>
 
-When the loading state appears, the updated text focuses on reassuring the user that the action is still happening, rather than repeating or explaining it. This reassurance is also announced by screen readers as the button text updates.
+The button colour is <span class="app-colour-chip">govuk-colour("dark-grey") (#505a5f)</span> which has high colour contrast with white text, making it more accessible.
 
-## Accessibility
+Users who cannot see the colour changes, but can see the text, will be able to get information from the button text changes.
 
-Example section...
+Screen readers should announce the button text updates.
 
-## Technical guidance
+### If users try to send information more than once
 
-Example section...
+Sometimes users select buttons more than once, for reasons outlined in the GOV.UK Design System [Button component](https://design-system.service.gov.uk/components/button/).
+
+You can configure the progress button to ignore multiple clicks by setting BOLD data-prevent-double-click to BOLD true as described in the Design System.
+
+// BOLD NEEDED ABOVE
+
+### If a user does not have JavaScript enabled
+
+The progress button uses JavaScript. A standard [Button component](https://design-system.service.gov.uk/components/button/) is shown if a user does not have JavaScript enabled.
+
+Add body copy above the button to help non-JavaScript users understand they need to wait, and for how long.
+
+/// EXAMPLE IMAGE - NEED MATT TO ADD
 
 ## Research on this component
 
-Example section...
+Research into progress indicators in public and private sector services found that the most important thing is to provide users with appropriate feedback about the delay.
+
+### Known issues and gaps
+
+This component still needs to be fully tested for accessibility.
+
+Screen readers should pick up the button text updates automatically if the button remains in focus.
+
+However, we need to understand whether screen readers reliably announce the button text updates in all assistive technology and browser combinations.
+
+If screen readers do not always announce the button text, we may need to explore using ARIA live regions or other techniques.
+
+We also need to test the spinner when users have BOLD prefers-reduced-motion enabled and decide whether to adapt how the component works for those users.
+
+///BOLD NEEDED ABOVE
+
