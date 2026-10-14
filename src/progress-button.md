@@ -2,6 +2,8 @@
 layout: component-detail
 title: Progress button
 description: Help users understand that they need to wait. Builds on the [Button component](https://design-system.service.gov.uk/components/button/) from the GOV.UK Design System.
+
+If a user does not have Javascript enabled, the standard Button component is shown. Body copy helps those users understand they need to wait.
 componentMacro: progress-button
 exampleUrl: /progress-button/example/
 htmlCode: |
