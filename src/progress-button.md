@@ -80,15 +80,13 @@ If that’s not possible, communicate progress in other ways such as:
 
 ## How it works
 
-// NEED BOLD IN FOLLOWING:
-
 The progress button reassures users that something is happening and makes them more likely to keep waiting.
 
 It builds on the Button component from the GOV.UK Design System to show that something is loading or processing.
 
 After a user selects the button the:
 * button changes colour and a spinner appears
-* button text updates to BOLDBOLDBOLD Wait to reassure the user something is still happening, and updates again after 5 seconds to BOLDBOLDBOLD Keep waiting if they need to wait longer
+* button text updates to **Wait** to reassure the user something is still happening, and updates again after 5 seconds to **Keep waiting** if they need to wait longer
 
 <table class="govuk-table">
   <thead class="govuk-table__head">
@@ -119,9 +117,7 @@ Screen readers should announce the button text updates.
 
 Sometimes users select buttons more than once, for reasons outlined in the GOV.UK Design System [Button component](https://design-system.service.gov.uk/components/button/).
 
-You can configure the progress button to ignore multiple clicks by setting BOLD data-prevent-double-click to BOLD true as described in the Design System.
-
-// BOLD NEEDED ABOVE
+You can configure the progress button to ignore multiple clicks by setting **data-prevent-double-click** to **true** as described in the Design System.
 
 ### If a user does not have JavaScript enabled
 
@@ -145,7 +141,4 @@ However, we need to understand whether screen readers reliably announce the butt
 
 If screen readers do not always announce the button text, we may need to explore using ARIA live regions or other techniques.
 
-We also need to test the spinner when users have BOLD prefers-reduced-motion enabled and decide whether to adapt how the component works for those users.
-
-///BOLD NEEDED ABOVE
-
+We also need to test the spinner when users have **prefers-reduced-motion** enabled and decide whether to adapt how the component works for those users.
