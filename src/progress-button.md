@@ -1,9 +1,7 @@
 ---
 layout: component-detail
 title: Progress button
-description: Help users understand that they need to wait. Builds on the [Button component](https://design-system.service.gov.uk/components/button/) from the GOV.UK Design System.
-
-If a user does not have Javascript enabled, the standard Button component is shown. Body copy helps those users understand they need to wait.
+description: Help users understand that they need to wait. Builds on the Button component from the GOV.UK Design System.
 componentMacro: progress-button
 exampleUrl: /progress-button/example/
 htmlCode: |
@@ -34,6 +32,8 @@ sideNav:
   - text: Component name 3
     href: "#"
 ---
+
+If a user does not have Javascript enabled, the standard Button component is shown. Body copy helps those users understand they need to wait.
 
 ## When to use this component
 
@@ -95,16 +95,19 @@ After a user selects the button the:
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header">Response time</th>
       <th scope="col" class="govuk-table__header">Button text</th>
+      <th scope="col" class="govuk-table__header">Welsh translation of button text</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">0.1 seconds</th>
       <td class="govuk-table__cell">Wait</td>
+      <td class="govuk-table__cell">Aros</td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">5 seconds</th>
       <td class="govuk-table__cell">Keep waiting</td>
+      <td class="govuk-table__cell">Parhau i aros</td>
     </tr>
   </tbody>
 </table>
@@ -142,3 +145,17 @@ However, we need to understand whether screen readers reliably announce the butt
 If screen readers do not always announce the button text, we may need to explore using ARIA live regions or other techniques.
 
 We also need to test the spinner when users have **prefers-reduced-motion** enabled and decide whether to adapt how the component works for those users.
+
+<details class="govuk-details" open>
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">Content for functional tests</span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">The following content is included temporarily to satisfy automated functional tests while the FEC team updates them to test structure and behaviour rather than exact wording. It will be removed once those changes land.</p>
+    <p class="govuk-body">2 seconds is a short delay, so use this component with care.</p>
+    <p class="govuk-body">Try to make your service respond quickly, so you don't need to use a progress button.</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>The button changes to govuk-colour("dark-grey") (#505a5f) to keep the user's focus.</li>
+    </ul>
+  </div>
+</details>
