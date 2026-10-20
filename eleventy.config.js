@@ -20,6 +20,7 @@ export default function (eleventyConfig) {
     ],
     serviceNavigation: {
       serviceName: "Design hub",
+      serviceUrl: "/",
       navigation: [
         { text: "Components", href: "/components/" },
         // { text: "Patterns", href: "/patterns/" },
