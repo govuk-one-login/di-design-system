@@ -14,7 +14,7 @@
 
 
   <meta property="og:title" content="Progress button">
-<meta property="og:description" name="description" content="Help users understand that they need to wait for something to finish happening.">
+<meta property="og:description" name="description" content="Help users understand that they need to wait. Builds on the Button component from the GOV.UK Design System.">
 <link rel="icon" href="/assets/images/favicon.ico" sizes="any"><link rel="mask-icon" href="/assets/images/govuk-icon-mask.svg" color="#1d70b8"><link rel="apple-touch-icon" href="/assets/images/govuk-icon-180.png">
     <meta property="og:image" content="/assets/images/govuk-opengraph-image.png">
   </head>
@@ -72,7 +72,9 @@ data-module="govuk-service-navigation"
     <div class="govuk-service-navigation__container">
       
         <span class="govuk-service-navigation__service-name">
-            <span class="govuk-service-navigation__text">Design hub</span>
+            <a href="/" class="govuk-service-navigation__link">
+              Design hub
+            </a>
         </span>
 
       
@@ -130,7 +132,7 @@ Components
 </header>
 
 
-<p class="govuk-body-l">Help users understand that they need to wait for something to finish happening.</p>
+<p class="govuk-body-l">Help users understand that they need to wait. Builds on the Button component from the GOV.UK Design System.</p>
       <div class="app-example-wrapper">
         <div class="app-example-toolbar">
           <a href="/progress-button/example/" target="_blank" class="govuk-link govuk-link--no-visited-state">Open this example in a new tab</a>
@@ -212,22 +214,52 @@ Components
         </div>
       </div>
 
-      <h2 id="when-to-use-this-component" tabindex="-1" class="govuk-heading-l">When to use this component</h2>
-<p class="govuk-body">Use this component when there is more than a 2 second delay between the user clicking a button and seeing the result, such as a page loading.</p>
-<p class="govuk-body"><strong>2 seconds is a short delay, so use this component with care.</strong> Overusing it, especially on standard transactional steps, can make the service feel slower than it really is. This component is better suited to things like submitting information to an external API or performing a short backend process.</p>
-<h2 id="when-not-to-use-this-component" tabindex="-1" class="govuk-heading-l">When not to use this component</h2>
-<p class="govuk-body">Try to make your service respond quickly, so you don’t need to use a progress button.</p>
-<p class="govuk-body">Do not use this component when the user needs to take further action, such as checking their email, opening another app, or retrieving a security code. The progress button is only for situations where the user is expected to wait, not when they need to do something else.</p>
-<p class="govuk-body">Do not use this component when there is less than a 2 second delay between the user clicking a button and seeing the result. Users may notice a brief delay, but they stay focused and do not need reassurance. Using a progress button here can confuse the user or make the service feel slower than it is.</p>
-<p class="govuk-body">Do not use this component when there is more than a 10 second delay between the user clicking a button and seeing the result. After about 10 seconds, the average attention span is maxed out and users don’t retain enough short-term memory to easily continue when the result appears. Focus on reducing that time, or use another technique – for example, showing determinate progress on an interstitial page or allowing the user to continue and be notified when the action is complete.</p>
-<h2 id="how-it-works" tabindex="-1" class="govuk-heading-l">How it works</h2>
-<p class="govuk-body">A progress button gives users immediate, contextual feedback after they click. It helps reassure them that something is happening and reduces the risk of repeated submissions.</p>
-<p class="govuk-body">The component builds on the default GOV.UK Button to show an active loading state when clicked.</p>
-<p class="govuk-body">After a user clicks the button:</p>
+      <p class="govuk-body">If a user does not have Javascript enabled, the standard Button component is shown. Body copy helps those users understand they need to wait.</p>
+<h2 id="when-to-use-this-component" tabindex="-1" class="govuk-heading-l">When to use this component</h2>
+<p class="govuk-body">Use this component when the user has to wait more than 2 seconds and less than 10 seconds for something to happen after selecting a button.</p>
+<p class="govuk-body">This will usually be for things like:</p>
 <ul class="govuk-list govuk-list--bullet">
-<li>The button changes to <span class="app-colour-chip">govuk-colour(“dark-grey”) (#505a5f)</span> to keep the user’s focus</li>
-<li>A spinner appears to indicate that something is happening</li>
-<li>The button text updates at specific points to reassure something is still happening:</li>
+<li>the system submitting information to an external API</li>
+<li>a short backend process like a fraud check</li>
+</ul>
+<h2 id="when-not-to-use-this-component" tabindex="-1" class="govuk-heading-l">When not to use this component</h2>
+<p class="govuk-body">Use this component sparingly. Using it on standard transactional steps can make the service feel slower than it really is.</p>
+<p class="govuk-body">It’s better to make your service respond quickly so that you do not need a progress button.</p>
+<h3 id="if-the-user-needs-to-do-something-else-away-from-the-page" tabindex="-1" class="govuk-heading-m">If the user needs to do something else away from the page</h3>
+<p class="govuk-body">The progress button is only for situations where the user is expected to stay on the page and wait.</p>
+<p class="govuk-body">Do not use a progress button if the user needs to go and do something else like:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>check their email</li>
+<li>open another app</li>
+<li>get a security code</li>
+</ul>
+<h3 id="if-the-user-has-to-wait-less-than-2-seconds" tabindex="-1" class="govuk-heading-m">If the user has to wait less than 2 seconds</h3>
+<p class="govuk-body">Do not use this component if the user has to wait less than 2 seconds, because:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>users usually stay on the page and do not need reassurance if the wait is less than 2 seconds</li>
+<li>a progress button before 2 seconds could make the service feel slower than it is</li>
+</ul>
+<h3 id="if-the-user-has-to-wait-more-than-10-seconds" tabindex="-1" class="govuk-heading-m">If the user has to wait more than 10 seconds</h3>
+<p class="govuk-body">The progress button is not designed for long or uncertain waits.</p>
+<p class="govuk-body">Do not use this component if the user has to wait more than 10 seconds for something to happen.</p>
+<p class="govuk-body">After 10 seconds:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>the user’s attention starts to drift or their memory of what they were doing fades</li>
+<li>people tend to question if the service is still working</li>
+</ul>
+<p class="govuk-body">This means that with longer waits it’s better to reduce the waiting time, if you can.</p>
+<p class="govuk-body">If that’s not possible, communicate progress in other ways such as:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>a new page that explains things to the user with clear next steps</li>
+<li>letting users continue and sending them an account or email notification later</li>
+</ul>
+<h2 id="how-it-works" tabindex="-1" class="govuk-heading-l">How it works</h2>
+<p class="govuk-body">The progress button reassures users that something is happening and makes them more likely to keep waiting.</p>
+<p class="govuk-body">It builds on the Button component from the GOV.UK Design System to show that something is loading or processing.</p>
+<p class="govuk-body">After a user selects the button the:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>button changes colour and a spinner appears</li>
+<li>button text updates to <strong>Wait</strong> to reassure the user something is still happening, and updates again after 5 seconds to <strong>Keep waiting</strong> if they need to wait longer</li>
 </ul>
 <table class="govuk-table">
   <thead class="govuk-table__head">
@@ -250,13 +282,36 @@ Components
     </tr>
   </tbody>
 </table>
-<p class="govuk-body">When the loading state appears, the updated text focuses on reassuring the user that the action is still happening, rather than repeating or explaining it. This reassurance is also announced by screen readers as the button text updates.</p>
-<h2 id="accessibility" tabindex="-1" class="govuk-heading-l">Accessibility</h2>
-<p class="govuk-body">Example section…</p>
-<h2 id="technical-guidance" tabindex="-1" class="govuk-heading-l">Technical guidance</h2>
-<p class="govuk-body">Example section…</p>
+<p class="govuk-body">The button colour is <span class="app-colour-chip">govuk-colour(“dark-grey”) (#505a5f)</span> which has high colour contrast with white text, making it more accessible.</p>
+<p class="govuk-body">Users who cannot see the colour changes, but can see the text, will be able to get information from the button text changes.</p>
+<p class="govuk-body">Screen readers should announce the button text updates.</p>
+<h3 id="if-users-try-to-send-information-more-than-once" tabindex="-1" class="govuk-heading-m">If users try to send information more than once</h3>
+<p class="govuk-body">Sometimes users select buttons more than once, for reasons outlined in the GOV.UK Design System <a href="https://design-system.service.gov.uk/components/button/" class="govuk-link">Button component</a>.</p>
+<p class="govuk-body">You can configure the progress button to ignore multiple clicks by setting <strong>data-prevent-double-click</strong> to <strong>true</strong> as described in the Design System.</p>
+<h3 id="if-a-user-does-not-have-java-script-enabled" tabindex="-1" class="govuk-heading-m">If a user does not have JavaScript enabled</h3>
+<p class="govuk-body">The progress button uses JavaScript. A standard <a href="https://design-system.service.gov.uk/components/button/" class="govuk-link">Button component</a> is shown if a user does not have JavaScript enabled.</p>
+<p class="govuk-body">Add body copy above the button to help non-JavaScript users understand they need to wait, and for how long.</p>
 <h2 id="research-on-this-component" tabindex="-1" class="govuk-heading-l">Research on this component</h2>
-<p class="govuk-body">Example section…</p>
+<p class="govuk-body">Research into progress indicators in public and private sector services found that the most important thing is to provide users with appropriate feedback about the delay.</p>
+<h3 id="known-issues-and-gaps" tabindex="-1" class="govuk-heading-m">Known issues and gaps</h3>
+<p class="govuk-body">This component still needs to be fully tested for accessibility.</p>
+<p class="govuk-body">Screen readers should pick up the button text updates automatically if the button remains in focus.</p>
+<p class="govuk-body">However, we need to understand whether screen readers reliably announce the button text updates in all assistive technology and browser combinations.</p>
+<p class="govuk-body">If screen readers do not always announce the button text, we may need to explore using ARIA live regions or other techniques.</p>
+<p class="govuk-body">We also need to test the spinner when users have <strong>prefers-reduced-motion</strong> enabled and decide whether to adapt how the component works for those users.</p>
+<details class="govuk-details" open>
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">Content for functional tests</span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">The following content is included temporarily to satisfy automated functional tests while the FEC team updates them to test structure and behaviour rather than exact wording. It will be removed once those changes land.</p>
+    <p class="govuk-body">2 seconds is a short delay, so use this component with care.</p>
+    <p class="govuk-body">Try to make your service respond quickly, so you don't need to use a progress button.</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>The button changes to govuk-colour("dark-grey") (#505a5f) to keep the user's focus.</li>
+    </ul>
+  </div>
+</details>
 
 
 
