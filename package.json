@@ -26,13 +26,14 @@
   },
   "homepage": "https://github.com/govuk-one-login/di-design-system#readme",
   "dependencies": {
-    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy": "^3.1.7",
     "@govuk-one-login/frontend-ui": "^5.0.0",
     "@x-govuk/govuk-eleventy-plugin": "^9.0.1",
     "typescript": "^5.9.3"
   },
   "overrides": {
-    "js-yaml": "4.3.2"
+    "js-yaml": "4.3.2",
+    "moment": "2.31.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.5.0",

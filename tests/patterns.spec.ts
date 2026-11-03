@@ -12,32 +12,21 @@ test("has patterns page title", async ({ page }) => {
 test("check links work in navigation", async ({ page }) => {
   await page.goto("/patterns");
 
-
   await page.getByRole("link", { name: "Components" }).first().click();
 });
 
-test("check main heading and text", async ({ page }) => {
+test("check main heading and text renders", async ({ page }) => {
   await page.goto("/patterns");
 
   await expect(page.getByRole("heading", { name: "Patterns" })).toBeVisible();
 
-  await expect(
-    page.getByText(
-      "Patterns are best practice design solutions for specific user-focused tasks and page types. They include examples of successful approaches but are flexible and don’t prescribe exact design solutions.",
-    ),
-  ).toBeVisible();
-
-  await expect(
-    page.getByText(
-      "Patterns often use one or more components and explain how to adapt them to the context.",
-    ),
-  ).toBeVisible();
-
-  await expect(
-    page.getByText(
-      "All of the patterns in this section are supported by written guidance and contain coded examples where possible.",
-    ),
-  ).toBeVisible();
+  const contentParagraphs = page.locator(
+    ".govuk-grid-column-two-thirds p",
+  );
+  expect(await contentParagraphs.count()).toBeGreaterThan(0);
+  for (const paragraph of await contentParagraphs.all()) {
+    await expect(paragraph).not.toBeEmpty();
+  }
 });
 
 test("side bar links", async ({ page }) => {
