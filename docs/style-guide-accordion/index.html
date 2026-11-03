@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en" class="govuk-template govuk-template--rebranded">
+  <head>
+    <meta charset="utf-8">
+    <title>A to Z style guide for GOV.UK One Login - GDS Design System | GOV.UK One Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#1d70b8">
+
+  <script src="/assets/application.js" type="module"></script>
+
+  <link rel="stylesheet" href="/assets/application.css">
+  <link rel="stylesheet" href="/assets/app-restyle.css">
+  <link rel="stylesheet" href="/assets/frontend-ui.css">
+
+
+  <meta property="og:title" content="A to Z style guide for GOV.UK One Login">
+<meta property="og:description" name="description" content="Style points specific to GOV.UK One Login that are not covered by the central GOV.UK style guide.">
+  <link rel="icon" sizes="48x48" href="/assets/images/favicon.ico">
+  <link rel="icon" sizes="any" href="/assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="mask-icon" href="/assets/images/govuk-icon-mask.svg" color="#1d70b8">
+  <link rel="apple-touch-icon" href="/assets/images/govuk-icon-180.png">
+
+    <meta property="og:image" content="/assets/images/govuk-opengraph-image.png">
+  </head>
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+
+        <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+
+    
+
+        <header class="govuk-template__header">
+            <div class="govuk-header app-header govuk-header--full-width-border" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container app-header__container">
+    <div class="govuk-header__logo app-header__logo">
+      <a href="/" class="govuk-header__homepage-link">
+          <svg
+              focusable="false"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 324 60"
+              height="30"
+              width="162"
+              fill="currentcolor" class="govuk-header__logotype" aria-label="GOV.UK"
+            ><title>GOV.UK</title>    <g>
+                  <circle cx="20" cy="17.6" r="3.7"/>
+                  <circle cx="10.2" cy="23.5" r="3.7"/>
+                  <circle cx="3.7" cy="33.2" r="3.7"/>
+                  <circle cx="31.7" cy="30.6" r="3.7"/>
+                  <circle cx="43.3" cy="17.6" r="3.7"/>
+                  <circle cx="53.2" cy="23.5" r="3.7"/>
+                  <circle cx="59.7" cy="33.2" r="3.7"/>
+                  <circle cx="31.7" cy="30.6" r="3.7"/>
+                  <path d="M33.1,9.8c.2-.1.3-.3.5-.5l4.6,2.4v-6.8l-4.6,1.5c-.1-.2-.3-.3-.5-.5l1.9-5.9h-6.7l1.9,5.9c-.2.1-.3.3-.5.5l-4.6-1.5v6.8l4.6-2.4c.1.2.3.3.5.5l-2.6,8c-.9,2.8,1.2,5.7,4.1,5.7h0c3,0,5.1-2.9,4.1-5.7l-2.6-8ZM37,37.9s-3.4,3.8-4.1,6.1c2.2,0,4.2-.5,6.4-2.8l-.7,8.5c-2-2.8-4.4-4.1-5.7-3.8.1,3.1.5,6.7,5.8,7.2,3.7.3,6.7-1.5,7-3.8.4-2.6-2-4.3-3.7-1.6-1.4-4.5,2.4-6.1,4.9-3.2-1.9-4.5-1.8-7.7,2.4-10.9,3,4,2.6,7.3-1.2,11.1,2.4-1.3,6.2,0,4,4.6-1.2-2.8-3.7-2.2-4.2.2-.3,1.7.7,3.7,3,4.2,1.9.3,4.7-.9,7-5.9-1.3,0-2.4.7-3.9,1.7l2.4-8c.6,2.3,1.4,3.7,2.2,4.5.6-1.6.5-2.8,0-5.3l5,1.8c-2.6,3.6-5.2,8.7-7.3,17.5-7.4-1.1-15.7-1.7-24.5-1.7h0c-8.8,0-17.1.6-24.5,1.7-2.1-8.9-4.7-13.9-7.3-17.5l5-1.8c-.5,2.5-.6,3.7,0,5.3.8-.8,1.6-2.3,2.2-4.5l2.4,8c-1.5-1-2.6-1.7-3.9-1.7,2.3,5,5.2,6.2,7,5.9,2.3-.4,3.3-2.4,3-4.2-.5-2.4-3-3.1-4.2-.2-2.2-4.6,1.6-6,4-4.6-3.7-3.7-4.2-7.1-1.2-11.1,4.2,3.2,4.3,6.4,2.4,10.9,2.5-2.8,6.3-1.3,4.9,3.2-1.8-2.7-4.1-1-3.7,1.6.3,2.3,3.3,4.1,7,3.8,5.4-.5,5.7-4.2,5.8-7.2-1.3-.2-3.7,1-5.7,3.8l-.7-8.5c2.2,2.3,4.2,2.7,6.4,2.8-.7-2.3-4.1-6.1-4.1-6.1h10.6,0Z"/>
+                </g>
+                <circle class="govuk-logo-dot" cx="226" cy="36" r="7.3"/>
+                <path d="M93.94 41.25c.4 1.81 1.2 3.21 2.21 4.62 1 1.4 2.21 2.41 3.61 3.21s3.21 1.2 5.22 1.2 3.61-.4 4.82-1c1.4-.6 2.41-1.4 3.21-2.41.8-1 1.4-2.01 1.61-3.01s.4-2.01.4-3.01v.14h-10.86v-7.02h20.07v24.08h-8.03v-5.56c-.6.8-1.38 1.61-2.19 2.41-.8.8-1.81 1.2-2.81 1.81-1 .4-2.21.8-3.41 1.2s-2.41.4-3.81.4a18.56 18.56 0 0 1-14.65-6.63c-1.6-2.01-3.01-4.41-3.81-7.02s-1.4-5.62-1.4-8.83.4-6.02 1.4-8.83a20.45 20.45 0 0 1 19.46-13.65c3.21 0 4.01.2 5.82.8 1.81.4 3.61 1.2 5.02 2.01 1.61.8 2.81 2.01 4.01 3.21s2.21 2.61 2.81 4.21l-7.63 4.41c-.4-1-1-1.81-1.61-2.61-.6-.8-1.4-1.4-2.21-2.01-.8-.6-1.81-1-2.81-1.4-1-.4-2.21-.4-3.61-.4-2.01 0-3.81.4-5.22 1.2-1.4.8-2.61 1.81-3.61 3.21s-1.61 2.81-2.21 4.62c-.4 1.81-.6 3.71-.6 5.42s.8 5.22.8 5.22Zm57.8-27.9c3.21 0 6.22.6 8.63 1.81 2.41 1.2 4.82 2.81 6.62 4.82S170.2 24.39 171 27s1.4 5.62 1.4 8.83-.4 6.02-1.4 8.83-2.41 5.02-4.01 7.02-4.01 3.61-6.62 4.82-5.42 1.81-8.63 1.81-6.22-.6-8.63-1.81-4.82-2.81-6.42-4.82-3.21-4.41-4.01-7.02-1.4-5.62-1.4-8.83.4-6.02 1.4-8.83 2.41-5.02 4.01-7.02 4.01-3.61 6.42-4.82 5.42-1.81 8.63-1.81Zm0 36.73c1.81 0 3.61-.4 5.02-1s2.61-1.81 3.61-3.01 1.81-2.81 2.21-4.41c.4-1.81.8-3.61.8-5.62 0-2.21-.2-4.21-.8-6.02s-1.2-3.21-2.21-4.62c-1-1.2-2.21-2.21-3.61-3.01s-3.21-1-5.02-1-3.61.4-5.02 1c-1.4.8-2.61 1.81-3.61 3.01s-1.81 2.81-2.21 4.62c-.4 1.81-.8 3.61-.8 5.62 0 2.41.2 4.21.8 6.02.4 1.81 1.2 3.21 2.21 4.41s2.21 2.21 3.61 3.01c1.4.8 3.21 1 5.02 1Zm36.32 7.96-12.24-44.15h9.83l8.43 32.77h.4l8.23-32.77h9.83L200.3 58.04h-12.24Zm74.14-7.96c2.18 0 3.51-.6 3.51-.6 1.2-.6 2.01-1 2.81-1.81s1.4-1.81 1.81-2.81a13 13 0 0 0 .8-4.01V13.9h8.63v28.15c0 2.41-.4 4.62-1.4 6.62-.8 2.01-2.21 3.61-3.61 5.02s-3.41 2.41-5.62 3.21-4.62 1.2-7.02 1.2-5.02-.4-7.02-1.2c-2.21-.8-4.01-1.81-5.62-3.21s-2.81-3.01-3.61-5.02-1.4-4.21-1.4-6.62V13.9h8.63v26.95c0 1.61.2 3.01.8 4.01.4 1.2 1.2 2.21 2.01 2.81.8.8 1.81 1.4 2.81 1.81 0 0 1.34.6 3.51.6Zm34.22-36.18v18.92l15.65-18.92h10.82l-15.03 17.32 16.03 26.83h-10.21l-11.44-20.21-5.62 6.22v13.99h-8.83V13.9"/>
+            </svg>
+        <span class="govuk-header__product-name">
+          One Login
+        </span>
+      </a>
+    </div>
+    
+  </div>
+</div>
+
+  
+
+  <section aria-label="Service information" class="govuk-service-navigation app-service-navigation"
+data-module="govuk-service-navigation"
+>
+      <div class="govuk-width-container">
+
+    <div class="govuk-service-navigation__container">
+      
+        <span class="govuk-service-navigation__service-name">
+            <a href="/" class="govuk-service-navigation__link">
+              Design hub
+            </a>
+        </span>
+
+      
+        <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+
+          <ul class="govuk-service-navigation__list" id="navigation" >
+
+            
+              
+              <li class="govuk-service-navigation__item">
+                  <a class="govuk-service-navigation__link" href="/components/">
+                                    
+Components
+                  </a>
+              </li>
+
+            </ul>
+        </nav>
+    </div>
+
+    </div>
+
+  </section>
+
+
+    
+
+        </header>
+      <div class="govuk-width-container">
+        <main class="govuk-main-wrapper" id="main-content">
+  
+<header class="app-document-header">
+  <h1 class="govuk-heading-xl">A to Z style guide for GOV.UK One Login</h1><p class="govuk-body-l">Style points specific to GOV.UK One Login that are not covered by the central GOV.UK style&nbsp;guide.</p>
+</header>
+
+
+
+  <p class="govuk-body">This style guide is for GOV.UK One Login content on the web and in mobile apps.</p>
+<p class="govuk-body">This means both:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>content in the GOV.UK One Login service</li>
+<li>anywhere that we talk about GOV.UK One Login</li>
+</ul>
+<p class="govuk-body">Remember to also use the <a href="https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style" class="govuk-link">GOV.UK style guide</a> for all your general style and plain English needs.</p>
+<p class="govuk-body">This guide also includes a list of <a href="#words-to-avoid" class="govuk-link">words to avoid</a>.</p>
+
+<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-style-guide">
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-style-guide-heading-a">A</span>
+      </h2>
+    </div>
+    <div id="accordion-style-guide-content-a" class="govuk-accordion__section-content">
+
+<h3 id="authenticator-app" tabindex="-1" class="govuk-heading-m">authenticator app</h3>
+<p class="govuk-body">Do not use authenticate or authentication, see sign in.</p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-style-guide-heading-b">B</span>
+      </h2>
+    </div>
+    <div id="accordion-style-guide-content-b" class="govuk-accordion__section-content">
+
+<h3 id="biometric" tabindex="-1" class="govuk-heading-m">biometric</h3>
+<p class="govuk-body">Use passport with a biometric chip when referring to non-UK passports with an embedded microchip.</p>
+<p class="govuk-body">All UK passports have a biometric chip, so just say UK passport for those.</p>
+<p class="govuk-body">For biometric when it relates to a UK residence card or permit, see entries under ‘U’.</p>
+<h3 id="biometrics" tabindex="-1" class="govuk-heading-m">biometrics</h3>
+<p class="govuk-body">One way an app user can prove it’s really them when they sign in. For example: ‘Unlock the app with biometrics’. Or ‘Use biometrics to unlock the app’. Do not refer to giving permission.</p>
+<p class="govuk-body">If there’s space, define biometrics as ‘your face, fingerprint or iris’. Because on Android phones you can have more than one type of biometrics enabled.</p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-style-guide-heading-c">C</span>
+      </h2>
+    </div>
+    <div id="accordion-style-guide-content-c" class="govuk-accordion__section-content">
+
+<h3 id="confirm-identity" tabindex="-1" class="govuk-heading-m">confirm identity</h3>
+<p class="govuk-body">When someone or something is confirming the identity of someone else. For example, a referee needs to confirm someone’s identity. Or GOV.UK One Login can confirm someone’s identity to a government service.</p>
+<p class="govuk-body">When describing the outcome of this say confirmed, not checked. For example, ‘Your identity has been confirmed’.</p>
+<p class="govuk-body">Do not use prove in this context.</p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-style-guide-heading-d">D</span>
+      </h2>
+    </div>
+    <div id="accordion-style-guide-content-d" class="govuk-accordion__section-content">
+
+<h3 id="document-digital-document" tabindex="-1" class="govuk-heading-m">document, digital document</h3>
+<p class="govuk-body">The thing a user saves in their wallet. Do not use credential. Document is plain, commonly used and easy to understand.</p>
+<p class="govuk-body">Use digital, not mobile, as an adjective when making a distinction with a document’s physical counterpart. For example:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>‘You’ll be able to use the digital version of your driving licence in the same way as your photocard driving licence’</li>
+<li>‘Get a digital HM Armed Forces Veteran Card’</li>
+</ul>
+<p class="govuk-body">Verbs are add, save, remove and view, so:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>a user adds a document to the wallet, but does not store it (store in an app context can be confusing)</li>
+<li>a document is saved in the wallet, not stored</li>
+<li>a document is removed from the wallet, not deleted, because it still exists and a user can add it again</li>
+<li>a user views a document in the wallet</li>
+</ul>
+<h3 id="driving-licences" tabindex="-1" class="govuk-heading-m">driving licences</h3>
+<p class="govuk-body">When talking about a physical driving licence, include the country (or issuing authority) at the front. If it’s helpful in your context, also include photocard.</p>
+<p class="govuk-body">So, UK driving licence, UK photocard driving licence, European Union (EU) driving licence or European Union (EU) photocard driving licence.</p>
+<p class="govuk-body">If you need to explain the term photocard, explain it like this: ‘This must be a plastic photocard, not a paper or handwritten licence.’</p>
+<p class="govuk-body">For the digital one that is in the wallet, use digital driving licence.</p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-style-guide-heading-e">E</span>
+      </h2>
+    </div>
+    <div id="accordion-style-guide-content-e" class="govuk-accordion__section-content">
+
+<h3 id="emails-email-updates" tabindex="-1" class="govuk-heading-m">emails, email updates</h3>
+<p class="govuk-body">We send users emails or email updates. Not notifications or alerts. Alerts clashes with GOV.UK Notify’s <a href="https://www.gov.uk/alerts" class="govuk-link">Emergency Alerts service</a>.</p>
+<p class="govuk-body">The email must be in English, then Welsh.</p>
+<p class="govuk-body">Style email subject lines like this: [English subject line] | [Welsh subject line]</p>
+<p class="govuk-body">Use a vertical line to separate the Welsh content from the English.</p>
+<p class="govuk-body">In the body of the email, repeat the Welsh subject line as an H2.</p>
+<h3 id="error-messages" tabindex="-1" class="govuk-heading-m">error messages</h3>
+<p class="govuk-body">Follow <a href="https://design-system.service.gov.uk/components/error-message/" class="govuk-link">Design System guidance for error messages</a> including error message templates.</p>
+<p class="govuk-body">Do not use a personal pronoun (your) or article (the, a) in a GOV.UK One Login error message, unless it sounds odd without it.</p>
+<p class="govuk-body">For example, ‘Sort code must be 6 characters’, not ‘Your sort code must be 6 characters’. This front loads the thing that is causing the error.</p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-style-guide-heading-f">F</span>
+      </h2>
+    </div>
+    <div id="accordion-style-guide-content-f" class="govuk-accordion__section-content">
+
+<h3 id="face-id-i-os-only" tabindex="-1" class="govuk-heading-m">FaceID (iOS only)</h3>
+<p class="govuk-body">For iOS say FaceID, not ‘your face’ or similar. See biometrics for Android style.</p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-style-guide-heading-g">G</span>
+      </h2>
+    </div>
+    <div id="accordion-style-guide-content-g" class="govuk-accordion__section-content">
+
+<h3 id="gov-uk-one-login" tabindex="-1" class="govuk-heading-m">GOV.UK One Login</h3>
+<p class="govuk-body">Always use the full name.</p>
+<p class="govuk-body">Do not use the word account when referring to a user’s GOV.UK One Login. This helps avoid confusion with other government accounts, such as the childcare account and personal tax account.</p>
+<h3 id="the-gov-uk-id-check-app" tabindex="-1" class="govuk-heading-m">the GOV.UK ID Check app</h3>
+<p class="govuk-body">Avoid mentioning the older GOV.UK ID Check app unless you need to give guidance to GOV.UK One Login users who have lost access to their existing 2FA method. This is to stop users from accidentally going to the wrong app.</p>
+<p class="govuk-body">Always use the definite article and the full name. Do not capitalise the first letter of app.</p>
+<p class="govuk-body">If you need to explain what it is for, say, 'The GOV.UK ID Check app is for proving your identity when you:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>access some HMRC services with Government Gateway</li>
+<li>need to change how you get security codes to sign in to your GOV.UK One Login’</li>
+</ul>
+<p class="govuk-body">Say ‘Link the GOV.UK ID Check app to the website’. Do not say ‘Link ID Check to the website’.</p>
+<h3 id="the-gov-uk-one-login-app" tabindex="-1" class="govuk-heading-m">the GOV.UK One Login app</h3>
+<p class="govuk-body">We say the GOV.UK One Login app, not GOV.UK One Login app. Always with the definite article and the full name. Do not capitalise the first letter of app. For example, ‘Use the GOV.UK One Login app to prove your identity’.</p>
+<p class="govuk-body">Never things like ‘Download GOV.UK One Login from the app store’.</p>
+<h3 id="government-service" tabindex="-1" class="govuk-heading-m">government service</h3>
+<p class="govuk-body">The word government is lower case.</p>
+<p class="govuk-body">Never: relying party, RP, connected service, service provider, SP, transaction, GOV.UK website or GOV.UK service.</p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-style-guide-heading-i">I</span>
+      </h2>
+    </div>
+    <div id="accordion-style-guide-content-i" class="govuk-accordion__section-content">
+
+<h3 id="information" tabindex="-1" class="govuk-heading-m">information</h3>
+<p class="govuk-body">We say information rather than data. It’s plainer and less scary.</p>
+<p class="govuk-body">Your information, your details or your personal information for things like a user’s name or address.</p>
+<p class="govuk-body">This also applies to the GOV.UK One Login app when we talk about deleting information, not deleting data or details. So: ‘[Completing this action] will delete the information in your GOV.UK One Login app.’</p>
+<p class="govuk-body">Only use data if you’re talking about how the user uses a service, like behaviour you track through Google Analytics.</p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-style-guide-heading-p">P</span>
+      </h2>
+    </div>
+    <div id="accordion-style-guide-content-p" class="govuk-accordion__section-content">
+
+<h3 id="passcode" tabindex="-1" class="govuk-heading-m">passcode</h3>
+<p class="govuk-body">Use for iOS only. For Android use PIN or pattern.</p>
+<h3 id="photo-id" tabindex="-1" class="govuk-heading-m">photo ID</h3>
+<p class="govuk-body">For example, ‘Enter details from your photo ID’, or ‘Take your photo ID to the Post Office’.</p>
+<p class="govuk-body">Say ‘another type of photo ID’ and not ‘another photo ID’. It’s about the type, not the user’s unique document.</p>
+<p class="govuk-body">Do not use photo ID type, forms of photo ID, photo ID documents or photo identification.</p>
+<h3 id="pin-or-pattern-android" tabindex="-1" class="govuk-heading-m">PIN or pattern (Android)</h3>
+<p class="govuk-body">Use for Android only. For iOS use passcode.</p>
+<h3 id="prove-identity" tabindex="-1" class="govuk-heading-m">prove identity</h3>
+<p class="govuk-body">When it’s someone proving their own identity. Don’t use check. Don’t use confirm - that means something else.</p>
+<p class="govuk-body">Use proved not proven for past tense. For example, ‘You have already proved your identity’.</p>
+<p class="govuk-body">We also say:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>prove your identity in person, or prove your identity face to face (never in-person verification or IPV)</li>
+<li>prove your identity using your passport or driving licence (do not say likeness check)</li>
+<li>prove you are who you say you are (not liveness check)</li>
+<li>prove your identity another way (do not refer to a thin file, for example)</li>
+</ul>
+    </div>
+  </div>
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-style-guide-heading-s">S</span>
+      </h2>
+    </div>
+    <div id="accordion-style-guide-content-s" class="govuk-accordion__section-content">
+
+<h3 id="security-code" tabindex="-1" class="govuk-heading-m">security code</h3>
+<p class="govuk-body">The code sent to a user as part of the authentication process when accessing a service.</p>
+<p class="govuk-body">Do not use: 2-factor authentication, 2 step verification, one time code, OTC, one time passcode, OTP, confirmation code.</p>
+<h3 id="security-questions" tabindex="-1" class="govuk-heading-m">security questions</h3>
+<p class="govuk-body">Questions that only the person proving their identity should know the answers to.</p>
+<h3 id="sign-in" tabindex="-1" class="govuk-heading-m">sign in</h3>
+<p class="govuk-body">Users sign in to GOV.UK One Login.</p>
+<p class="govuk-body"><a href="https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#sign-in-to" class="govuk-link">Sign in is GOV.UK style</a>. It’s plainer than log in and users who understand log in understand sign in too, while the opposite might not be true.</p>
+<p class="govuk-body">Do not use log in, log on or sign on. Do not use signin or login as nouns.</p>
+<p class="govuk-body">Do not use authentication. Either use sign in, or talk about ‘making sure it’s you’. If you need specific information, ask the user directly. For example, ‘tell us your date of birth’.</p>
+<h3 id="symbol" tabindex="-1" class="govuk-heading-m">symbol</h3>
+<p class="govuk-body">Only use when referring to a specific, named character. For example, ‘Phone number must only include numbers or the + symbol’. Do not say special character.</p>
+<p class="govuk-body">Do not use otherwise. Instead, refer to the characters that users are allowed to enter. For example:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>‘Passport number must only include numbers’</li>
+<li>‘Postcode must only include letters and numbers’</li>
+</ul>
+    </div>
+  </div>
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-style-guide-heading-t">T</span>
+      </h2>
+    </div>
+    <div id="accordion-style-guide-content-t" class="govuk-accordion__section-content">
+
+<h3 id="text-message" tabindex="-1" class="govuk-heading-m">text message</h3>
+<p class="govuk-body">Not SMS.</p>
+<h3 id="touch-id" tabindex="-1" class="govuk-heading-m">TouchID</h3>
+<p class="govuk-body">Use for iOS only. Don’t say fingerprint if it’s iOS. See biometrics for Android style.</p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-style-guide-heading-u">U</span>
+      </h2>
+    </div>
+    <div id="accordion-style-guide-content-u" class="govuk-accordion__section-content">
+
+<h3 id="uk-biometric-residence-card-brc" tabindex="-1" class="govuk-heading-m">UK Biometric residence card (BRC)</h3>
+<p class="govuk-body">Not UK residence card or EEA biometric residence card. We include UK in the full name because other countries also issue residence cards. Use BRC in subsequent mentions.</p>
+<h3 id="uk-biometric-residence-permit-brp" tabindex="-1" class="govuk-heading-m">UK biometric residence permit (BRP)</h3>
+<p class="govuk-body">Use BRP in subsequent mentions. We include UK in the full name because other countries also issue residence permits.</p>
+<h3 id="uk-digital-identity-and-attributes-trust-framework" tabindex="-1" class="govuk-heading-m">UK digital identity and attributes trust framework</h3>
+<p class="govuk-body">A set of rules and standards for all organisations participating in the <a href="https://www.gov.uk/government/publications/uk-digital-identity-and-attributes-trust-framework" class="govuk-link">UK digital identity and attributes trust framework</a>.</p>
+<h3 id="uk-frontier-worker-permit-fwp" tabindex="-1" class="govuk-heading-m">UK Frontier Worker permit (FWP)</h3>
+<p class="govuk-body">Use FWP in subsequent mentions. We include FWP in the full name because other countries also issue work permits.</p>
+    </div>
+  </div>
+</div>
+<h2 id="words-to-avoid" tabindex="-1" class="govuk-heading-l">Words to avoid</h2>
+<p class="govuk-body">Plain English is mandatory for all of GOV.UK and GOV.UK One Login so avoid using these words:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>attribute (as in a piece of information), instead talk about the thing itself, for example ‘we need to know what your bank account number is’</li>
+<li>attribute provider, instead just name who you will be checking the user’s information with or say ‘another organisation’ where appropriate</li>
+<li>credential, use document for the thing a user saves in their wallet</li>
+<li>knowledge based verification questions or KBVs, instead talk about ‘answering security questions that only you should know the answers to’</li>
+<li>relying party, instead talk about the ‘service’ or ‘government service’</li>
+<li>verify, instead talk about proving your identity or confirming someone else’s identity</li>
+<li>vouching, instead talk about asking a ‘referee’ to help confirm your identity</li>
+</ul>
+
+        </main>
+      </div>
+
+    
+
+        <footer class="govuk-template__footer">
+            <div class="govuk-footer app-footer " role="contentinfo">
+  <div class="govuk-width-container ">
+
+  <svg
+    focusable="false"
+    role="presentation"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 64 60"
+    height="30"
+    width="32"
+    fill="currentcolor" class="govuk-footer__crown"
+  >    <g>
+        <circle cx="20" cy="17.6" r="3.7"/>
+        <circle cx="10.2" cy="23.5" r="3.7"/>
+        <circle cx="3.7" cy="33.2" r="3.7"/>
+        <circle cx="31.7" cy="30.6" r="3.7"/>
+        <circle cx="43.3" cy="17.6" r="3.7"/>
+        <circle cx="53.2" cy="23.5" r="3.7"/>
+        <circle cx="59.7" cy="33.2" r="3.7"/>
+        <circle cx="31.7" cy="30.6" r="3.7"/>
+        <path d="M33.1,9.8c.2-.1.3-.3.5-.5l4.6,2.4v-6.8l-4.6,1.5c-.1-.2-.3-.3-.5-.5l1.9-5.9h-6.7l1.9,5.9c-.2.1-.3.3-.5.5l-4.6-1.5v6.8l4.6-2.4c.1.2.3.3.5.5l-2.6,8c-.9,2.8,1.2,5.7,4.1,5.7h0c3,0,5.1-2.9,4.1-5.7l-2.6-8ZM37,37.9s-3.4,3.8-4.1,6.1c2.2,0,4.2-.5,6.4-2.8l-.7,8.5c-2-2.8-4.4-4.1-5.7-3.8.1,3.1.5,6.7,5.8,7.2,3.7.3,6.7-1.5,7-3.8.4-2.6-2-4.3-3.7-1.6-1.4-4.5,2.4-6.1,4.9-3.2-1.9-4.5-1.8-7.7,2.4-10.9,3,4,2.6,7.3-1.2,11.1,2.4-1.3,6.2,0,4,4.6-1.2-2.8-3.7-2.2-4.2.2-.3,1.7.7,3.7,3,4.2,1.9.3,4.7-.9,7-5.9-1.3,0-2.4.7-3.9,1.7l2.4-8c.6,2.3,1.4,3.7,2.2,4.5.6-1.6.5-2.8,0-5.3l5,1.8c-2.6,3.6-5.2,8.7-7.3,17.5-7.4-1.1-15.7-1.7-24.5-1.7h0c-8.8,0-17.1.6-24.5,1.7-2.1-8.9-4.7-13.9-7.3-17.5l5-1.8c-.5,2.5-.6,3.7,0,5.3.8-.8,1.6-2.3,2.2-4.5l2.4,8c-1.5-1-2.6-1.7-3.9-1.7,2.3,5,5.2,6.2,7,5.9,2.3-.4,3.3-2.4,3-4.2-.5-2.4-3-3.1-4.2-.2-2.2-4.6,1.6-6,4-4.6-3.7-3.7-4.2-7.1-1.2-11.1,4.2,3.2,4.3,6.4,2.4,10.9,2.5-2.8,6.3-1.3,4.9,3.2-1.8-2.7-4.1-1-3.7,1.6.3,2.3,3.3,4.1,7,3.8,5.4-.5,5.7-4.2,5.8-7.2-1.3-.2-3.7,1-5.7,3.8l-.7-8.5c2.2,2.3,4.2,2.7,6.4,2.8-.7-2.3-4.1-6.1-4.1-6.1h10.6,0Z"/>
+      </g>
+  </svg>
+
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <h2 class="govuk-visually-hidden">Support links</h2>
+            <ul class="govuk-footer__inline-list">
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="https://signin.account.gov.uk/accessibility-statement">
+                    Accessibility statement
+                  </a>
+                </li>
+            </ul>
+<svg class="govuk-footer__licence-logo" aria-hidden="true" focusable="false" height="17" width="41" viewBox="0 0 483.2 195.7" xmlns="http://www.w3.org/2000/svg">
+  <path fill="currentColor" d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"/>
+</svg>
+          <span class="govuk-footer__licence-description">
+            All content is available under the <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated
+          </span>
+      </div><div class="govuk-footer__meta-item">            <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">©&nbsp;Crown copyright</a>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+        </footer>
+  </body>
+</html>
