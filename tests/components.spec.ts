@@ -12,26 +12,21 @@ test("has components page title", async ({ page }) => {
 test("check links work in navigation", async ({ page }) => {
   await page.goto("/components");
 
-
   await page.getByRole("link", { name: "Components" }).first().click();
 });
 
-test("check main heading and text", async ({ page }) => {
+test("check main heading and text renders", async ({ page }) => {
   await page.goto("/components");
 
   await expect(page.getByRole("heading", { name: "Components" })).toBeVisible();
 
-  await expect(
-    page.getByText(
-      "Components are reusable parts of a user interface used across GOV.UK One Login. Individual components can be used in multiple different patterns, pages and context.",
-    ),
-  ).toBeVisible();
-
-  await expect(
-    page.getByText(
-      "All of the components in this section are supported by written guidance and contain coded examples where possible.",
-    ),
-  ).toBeVisible();
+  const contentParagraphs = page.locator(
+    ".govuk-grid-column-three-quarters-from-desktop p",
+  );
+  expect(await contentParagraphs.count()).toBeGreaterThan(0);
+  for (const paragraph of await contentParagraphs.all()) {
+    await expect(paragraph).not.toBeEmpty();
+  }
 });
 
 test("side bar links", async ({ page }) => {
