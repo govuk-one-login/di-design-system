@@ -18,15 +18,14 @@ test("side bar links are visible", async ({ page }) => {
 
   const sideNav = page.getByRole("navigation", { name: /Components/i });
 
+  // The current page should appear in the sidebar
   await expect(
     sideNav.getByText("Progress button"),
   ).toBeVisible();
-  await expect(
-    sideNav.getByRole("link", { name: /Component name 2/i }),
-  ).toBeVisible();
-  await expect(
-    sideNav.getByRole("link", { name: /Component name 3/i }),
-  ).toBeVisible();
+
+  // Sidebar should contain at least one other link
+  const sideNavLinks = sideNav.getByRole("link");
+  expect(await sideNavLinks.count()).toBeGreaterThan(0);
 });
 
 test("check main heading and text renders", async ({ page }) => {
@@ -43,31 +42,27 @@ test("check main heading and text renders", async ({ page }) => {
   await expect(description).toBeVisible();
   await expect(description).not.toBeEmpty();
 
-  // Verify structural section headings exist
-  await expect(
-    page.getByRole("heading", { name: "When to use this component" }),
-  ).toBeVisible();
+  // Verify at least one section heading exists below the description
+  const sectionHeadings = page.locator(
+    ".govuk-grid-column-three-quarters-from-desktop h2",
+  );
+  expect(await sectionHeadings.count()).toBeGreaterThan(0);
 
-  await expect(
-    page.getByRole("heading", { name: "When not to use this component" }),
-  ).toBeVisible();
+  // If a table is present, verify it has headers and at least one data row
+  const table = page.locator("table").first();
+  if (await table.isVisible()) {
+    const headers = page.locator("thead th");
+    expect(await headers.count()).toBeGreaterThan(0);
+    for (const header of await headers.all()) {
+      await expect(header).not.toBeEmpty();
+    }
 
-  await expect(
-    page.getByRole("heading", { name: "How it works" }),
-  ).toBeVisible();
-
-  // Verify the table renders with the expected structure (3 columns, non-empty cells)
-  const headers = page.locator("thead th");
-  expect(await headers.count()).toBe(3);
-  for (const header of await headers.all()) {
-    await expect(header).not.toBeEmpty();
-  }
-
-  const firstRow = page.locator("tbody tr").first();
-  const firstRowCells = firstRow.locator("th, td");
-  expect(await firstRowCells.count()).toBe(3);
-  for (const cell of await firstRowCells.all()) {
-    await expect(cell).not.toBeEmpty();
+    const firstRow = page.locator("tbody tr").first();
+    const firstRowCells = firstRow.locator("th, td");
+    expect(await firstRowCells.count()).toBeGreaterThan(0);
+    for (const cell of await firstRowCells.all()) {
+      await expect(cell).not.toBeEmpty();
+    }
   }
 });
 

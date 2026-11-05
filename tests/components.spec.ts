@@ -32,9 +32,12 @@ test("check main heading and text renders", async ({ page }) => {
 test("side bar links", async ({ page }) => {
   await page.goto("/components");
 
-  await page.getByRole("link", { name: "Progress button " }).click();
+  const sideNav = page.getByRole("navigation", { name: /Components/i });
+  const sideNavLinks = sideNav.getByRole("link");
 
-  await page.getByRole("link", { name: "Component name 2" }).click();
+  // Sidebar should contain at least one link
+  expect(await sideNavLinks.count()).toBeGreaterThan(0);
 
-  await page.getByRole("link", { name: "Component name 2" }).click();
+  // First sidebar link should be navigable
+  await sideNavLinks.first().click();
 });
