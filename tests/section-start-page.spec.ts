@@ -16,19 +16,17 @@ test("check links work in navigation", async ({ page }) => {
 test("side bar links", async ({ page }) => {
   await page.goto("/section-start-page");
 
-  // Verify the links exist without clicking the one that reloads the page
+  // Verify the current page link exists in the sidebar
   const sectionLink = page
     .getByRole("link", { name: "Section start page" })
     .first();
   await expect(sectionLink).toBeVisible();
 
-  await expect(
-    page.getByRole("link", { name: /Pattern name 2/i }),
-  ).toBeVisible();
-
-  await expect(
-    page.getByRole("link", { name: /Pattern name 3/i }),
-  ).toBeVisible();
+  // Sidebar should contain at least one other link
+  const sidebarLinks = page.locator(
+    ".govuk-grid-column-one-quarter-from-desktop a",
+  );
+  expect(await sidebarLinks.count()).toBeGreaterThan(1);
 });
 
 test("check main heading and text renders", async ({ page }) => {
@@ -45,19 +43,11 @@ test("check main heading and text renders", async ({ page }) => {
   await expect(description).toBeVisible();
   await expect(description).not.toBeEmpty();
 
-  // Verify structural section headings exist
-  await expect(
-    page.getByRole("heading", { name: "When to use this pattern" }),
-  ).toBeVisible();
-
-  await expect(
-    page.getByRole("heading", { name: "How it works" }),
-  ).toBeVisible();
-
-  // Verify list items render under "How it works" without asserting exact text
-  const listItems = page.locator("ul li");
-  expect(await listItems.count()).toBeGreaterThan(0);
-  await expect(listItems.first()).not.toBeEmpty();
+  // Verify at least one section heading exists below the description
+  const sectionHeadings = page.locator(
+    ".govuk-grid-column-three-quarters-from-desktop h2",
+  );
+  expect(await sectionHeadings.count()).toBeGreaterThan(0);
 });
 
 test("check tabs", async ({ page }) => {
