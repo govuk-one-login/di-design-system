@@ -1,7 +1,7 @@
 ---
 layout: component-detail
 title: Progress button
-description: Help users understand that they need to wait. Builds on the Button component from the GOV.UK Design System.
+description: Help users understand that they need to wait.
 componentMacro: progress-button
 exampleUrl: /progress-button/example/
 htmlCode: |
@@ -32,6 +32,8 @@ sideNav:
   - text: Component name 3
     href: "#"
 ---
+
+Builds on the Button component from the GOV.UK Design System.
 
 If a user does not have Javascript enabled, the standard Button component is shown. Body copy helps those users understand they need to wait.
 
@@ -95,19 +97,16 @@ After a user selects the button the:
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header">Response time</th>
       <th scope="col" class="govuk-table__header">Button text</th>
-      <th scope="col" class="govuk-table__header">Welsh translation of button text</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">0.1 seconds</th>
       <td class="govuk-table__cell">Wait</td>
-      <td class="govuk-table__cell">Aros</td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">5 seconds</th>
       <td class="govuk-table__cell">Keep waiting</td>
-      <td class="govuk-table__cell">Parhau i aros</td>
     </tr>
   </tbody>
 </table>
