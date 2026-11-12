@@ -101,11 +101,11 @@ After a user selects the button the:
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">0.1 seconds</th>
+      <td class="govuk-table__cell">0.1 seconds</td>
       <td class="govuk-table__cell">Wait</td>
     </tr>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">5 seconds</th>
+      <td class="govuk-table__cell">5 seconds</td>
       <td class="govuk-table__cell">Keep waiting</td>
     </tr>
   </tbody>
