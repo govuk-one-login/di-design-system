@@ -86,7 +86,7 @@ If that’s not possible, communicate progress in other ways such as:
 
 The progress button reassures users that something is happening and makes them more likely to keep waiting.
 
-It builds on the Button component from the GOV.UK Design System to show that something is loading or processing.
+It builds on the [Button component](https://design-system.service.gov.uk/components/button/) from the GOV.UK Design System to show that something is loading or processing.
 
 After a user selects the button the:
 * button changes colour and a spinner appears
@@ -101,11 +101,11 @@ After a user selects the button the:
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">0.1 seconds</th>
+      <td class="govuk-table__cell">0.1 seconds</td>
       <td class="govuk-table__cell">Wait</td>
     </tr>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">5 seconds</th>
+      <td class="govuk-table__cell">5 seconds</td>
       <td class="govuk-table__cell">Keep waiting</td>
     </tr>
   </tbody>
@@ -125,7 +125,7 @@ You can configure the progress button to ignore multiple clicks by setting **dat
 
 ### If a user does not have JavaScript enabled
 
-The progress button uses JavaScript. A standard [Button component](https://design-system.service.gov.uk/components/button/) is shown if a user does not have JavaScript enabled.
+The progress button uses JavaScript. A standard Button component is shown if a user does not have JavaScript enabled.
 
 Add body copy above the button to help non-JavaScript users understand they need to wait, and for how long.
 
