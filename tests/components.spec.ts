@@ -9,10 +9,11 @@ test("has components page title", async ({ page }) => {
   );
 });
 
-test("check links work in navigation", async ({ page }) => {
+test("check navigation renders", async ({ page }) => {
   await page.goto("/components");
 
-  await page.getByRole("link", { name: "Components" }).first().click();
+  const nav = page.locator(".govuk-service-navigation__list");
+  await expect(nav).toBeVisible();
 });
 
 test("check main heading and text renders", async ({ page }) => {

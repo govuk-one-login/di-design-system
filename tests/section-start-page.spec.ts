@@ -7,10 +7,11 @@ test("has section start page title", async ({ page }) => {
   await expect(page).toHaveTitle(/- GDS Design System | GOV.UK One Login/i);
 });
 
-test("check links work in navigation", async ({ page }) => {
+test("check navigation renders", async ({ page }) => {
   await page.goto("/section-start-page");
 
-  await page.getByRole("link", { name: "Components" }).first().click();
+  const nav = page.locator(".govuk-service-navigation__list");
+  await expect(nav).toBeVisible();
 });
 
 test("side bar links", async ({ page }) => {

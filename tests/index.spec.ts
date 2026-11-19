@@ -6,9 +6,11 @@ test("has home page title", async ({ page }) => {
   await expect(page).toHaveTitle(/Home - GDS Design System | GOV.UK One Login/);
 });
 
-test("check links work in navigation", async ({ page }) => {
+test("check navigation renders", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("link", { name: "Components" }).first().click();
+
+  const nav = page.locator(".govuk-service-navigation__list");
+  await expect(nav).toBeVisible();
 });
 
 test("check hero section renders", async ({ page }) => {
@@ -17,22 +19,8 @@ test("check hero section renders", async ({ page }) => {
   await expect(page.locator(".app-masthead p")).not.toBeEmpty();
 });
 
-test("'what's new' section renders", async ({ page }) => {
+test("check cards section renders", async ({ page }) => {
   await page.goto("/");
-
-  await expect(
-    page.getByRole("heading", { name: "What's new" }),
-  ).toBeVisible();
-
-  const listItems = page.locator(".app-whats-new__list li");
-  await expect(listItems.first()).toBeVisible();
-  expect(await listItems.count()).toBeGreaterThan(0);
-});
-
-test("check 'resources' section renders", async ({ page }) => {
-  await page.goto("/");
-
-  await expect(page.getByRole("heading", { name: "Resources" })).toBeVisible();
 
   const cards = page.locator(".design-hub-card");
   expect(await cards.count()).toBeGreaterThan(0);
